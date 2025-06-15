@@ -163,7 +163,7 @@ const Home: React.FC = () => {
                     {/* View CV Button */}
                     <div className="flex justify-center md:justify-start">
                       <a
-                        href="/e-portfolio/files/Pantaras-Portfolio.pdf"
+                        href="portfolio/e-portfolio/files/Pantaras-Portfolio.pdf" 
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex text-xs md:text-sm items-center gap-2 bg-yellow-400/10 hover:bg-yellow-400/20 text-yellow-500 hover:text-white py-2 px-6 md:px-8 rounded-lg transition-all duration-300"
