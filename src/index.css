@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-[#131313] min-h-screen min-w-[320px] m-0 font-normal tracking-wide;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium tracking-wider;
+  }
+  
+  a {
+    @apply font-medium text-[#646cff] no-underline hover:text-[#535bf2] tracking-wide;
+  }
+}
+
+.animated-gradient {
+  background: linear-gradient(270deg, #0f2027, #2c5364, #1c92d2, #f2fcfe, #0f2027);
+  background-size: 1200% 1200%;
+  animation: gradientMove 18s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.circle-blur {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(35px);
+  opacity: 0.15;
+  background: #facc15;  /* Changed from #4ade80 to Tailwind's yellow-400 */
+  will-change: transform;
+  transition: transform 0.2s ease-out;
+}
+
+.circle-follow {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.circle-expand {
+  transform: scale(1.1);
+  opacity: 0.2;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.circle1 {
+  width: 280px;
+  height: 280px;
+  left: 5%;
+  top: 15%;
+  animation: floatCircle1 18s infinite ease-in-out;
+}
+
+.circle2 {
+  width: 260px;
+  height: 260px;
+  right: 8%;
+  top: 25%;
+  animation: floatCircle2 20s infinite ease-in-out;
+}
+
+.circle3 {
+  width: 230px;
+  height: 230px;
+  left: 45%;
+  bottom: 20%;
+  animation: floatCircle3 22s infinite ease-in-out;
+}
+
+.circle4 {
+  width: 200px;
+  height: 200px;
+  right: 35%;
+  top: 10%;
+  animation: floatCircle4 19s infinite ease-in-out;
+}
+
+.circle5 {
+  width: 180px;
+  height: 180px;
+  left: 25%;
+  top: 45%;
+  animation: floatCircle5 21s infinite ease-in-out;
+}
+
+@keyframes floatCircle1 {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(180px, -120px); }
+  40% { transform: translate(80px, 200px); }
+  60% { transform: translate(-150px, 80px); }
+  80% { transform: translate(100px, -160px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes floatCircle2 {
+  0% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(-200px, -150px) scale(1.1); }
+  50% { transform: translate(-180px, 120px) scale(0.85); }
+  75% { transform: translate(150px, -180px) scale(1.15); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes floatCircle3 {
+  0% { transform: translate(0, 0) scale(1); }
+  20% { transform: translate(-180px, -160px) scale(0.9); }
+  40% { transform: translate(200px, 140px) scale(1.2); }
+  60% { transform: translate(-120px, 180px) scale(0.85); }
+  80% { transform: translate(160px, -140px) scale(1.1); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes floatCircle4 {
+  0% { transform: translate(0, 0) scale(1); }
+  30% { transform: translate(160px, 180px) scale(1.15); }
+  50% { transform: translate(-140px, -160px) scale(0.9); }
+  70% { transform: translate(-180px, 120px) scale(1.1); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes floatCircle5 {
+  0% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(-140px, -180px) scale(1.05); }
+  45% { transform: translate(200px, -150px) scale(0.9); }
+  65% { transform: translate(120px, 200px) scale(1.15); }
+  85% { transform: translate(-180px, 100px) scale(0.95); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+/* Entrance animations */
+.home-content {
+  opacity: 0;
+}
+
+.home-content.animate-in {
+  opacity: 1;
+}
+
+.home-content.animate-in section {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Navbar wave animation */
+.wave-text {
+  display: inline-block;
+}
+
+.wave-letter {
+  display: inline-block;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.wave-text:hover .wave-letter {
+  animation: wave 0.5s ease forwards;
+}
+
+@keyframes wave {
+  0%, 100% { 
+    transform: translateY(0);
+  }
+  50% { 
+    transform: translateY(-6px);
+  }
+}
+
+/* Add delay for each letter */
+.wave-text:hover .wave-letter:nth-child(1) { animation-delay: 0.0s; }
+.wave-text:hover .wave-letter:nth-child(2) { animation-delay: 0.05s; }
+.wave-text:hover .wave-letter:nth-child(3) { animation-delay: 0.1s; }
+.wave-text:hover .wave-letter:nth-child(4) { animation-delay: 0.15s; }
+.wave-text:hover .wave-letter:nth-child(5) { animation-delay: 0.2s; }
+.wave-text:hover .wave-letter:nth-child(6) { animation-delay: 0.25s; }
+.wave-text:hover .wave-letter:nth-child(7) { animation-delay: 0.3s; }
+.wave-text:hover .wave-letter:nth-child(8) { animation-delay: 0.35s; }
+.wave-text:hover .wave-letter:nth-child(9) { animation-delay: 0.4s; }
+.wave-text:hover .wave-letter:nth-child(10) { animation-delay: 0.45s; }
+.wave-text:hover .wave-letter:nth-child(11) { animation-delay: 0.5s; }
+.wave-text:hover .wave-letter:nth-child(12) { animation-delay: 0.55s; }
+.wave-text:hover .wave-letter:nth-child(13) { animation-delay: 0.6s; }
+.wave-text:hover .wave-letter:nth-child(14) { animation-delay: 0.65s; }
+.wave-text:hover .wave-letter:nth-child(15) { animation-delay: 0.7s; }
+.wave-text:hover .wave-letter:nth-child(16) { animation-delay: 0.75s; }
+.wave-text:hover .wave-letter:nth-child(17) { animation-delay: 0.8s; }
+.wave-text:hover .wave-letter:nth-child(18) { animation-delay: 0.85s; }
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}

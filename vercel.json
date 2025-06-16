@@ -1,0 +1,14 @@
+{
+  "rewrites": [
+    {
+      "source": "/portfolio/(.*)",
+      "destination": "/$1"
+    },
+    {
+      "source": "/portfolio",
+      "destination": "/"
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
+}

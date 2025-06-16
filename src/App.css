@@ -1,0 +1,33 @@
+#root {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+@keyframes shine {
+  0% {
+    background-position: -200%;
+  }
+  50% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+.shine-effect {
+  background: linear-gradient(
+    90deg,
+    #fff 0%,
+    #ffffff10 25%,
+    #ffffff 50%,
+    #ffffff 75%,
+    #fff 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: shine 12s ease-in-out infinite;
+}
