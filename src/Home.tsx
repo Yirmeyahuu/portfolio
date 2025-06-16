@@ -11,7 +11,7 @@ import ContactParticles from './components/ContactParticles';
 // Constants for video paths
 const communityVideo = '/portfolio/videos/Community Outreach.mp4';
 const camp2024Video = '/portfolio/videos/FSBC Post Camp 2024.mp4';
-
+const camp2025Video = '/portfolio/videos/FSBC Post Camp 2025.mp4';
 
 
 const Home: React.FC = () => {
@@ -587,7 +587,54 @@ const Home: React.FC = () => {
                     </Parallax>
                   </div>
 
-                  
+                  {/* Video Project 3 */}
+                  <div className="md:hidden">
+                    <div className="group bg-[#1A1A1A] rounded-xl overflow-hidden hover:bg-yellow-400/5 transition-all duration-300 h-full flex flex-col">
+                      <div className="relative aspect-video overflow-hidden">
+                        <video 
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                          controls
+                          preload="metadata"
+                        >
+                          <source src={camp2025Video} type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
+                      </div>
+                      <div className="p-6">
+                        <h3 className="text-xl font-medium text-white mb-2 group-hover:text-yellow-400 transition-colors duration-300">FSBC Post Camp 2025</h3>
+                        <p className="text-gray-400 text-sm mb-4">Coverage of the latest FSBC Post Camp activities and achievements in 2025.</p>
+                        <div className="flex flex-wrap gap-2 mt-auto">
+                          <span className="text-xs px-3 py-1 bg-yellow-400/10 text-yellow-400 rounded-full">Adobe Premiere Pro</span>
+                          <span className="text-xs px-3 py-1 bg-yellow-400/10 text-yellow-400 rounded-full">Adobe After Effects</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="hidden md:block">
+                    <Parallax translateX={[15, -20]} opacity={[0.8, 1]} speed={-3}>
+                      {/* Video Project 3 */}
+                      <div className="group bg-[#1A1A1A] rounded-xl overflow-hidden hover:bg-yellow-400/5 transition-all duration-300 h-full flex flex-col">
+                        <div className="relative aspect-video overflow-hidden">
+                          <video 
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                            controls
+                            preload="metadata"
+                          >
+                            <source src={camp2025Video} type="video/mp4" />
+                            Your browser does not support the video tag.
+                          </video>
+                        </div>
+                        <div className="p-6">
+                          <h3 className="text-xl font-medium text-white mb-2 group-hover:text-yellow-400 transition-colors duration-300">FSBC Post Camp 2025</h3>
+                          <p className="text-gray-400 text-sm mb-4">Coverage of the latest FSBC Post Camp activities and achievements in 2025.</p>
+                          <div className="flex flex-wrap gap-2 mt-auto">
+                            <span className="text-xs px-3 py-1 bg-yellow-400/10 text-yellow-400 rounded-full">Adobe Premiere Pro</span>
+                            <span className="text-xs px-3 py-1 bg-yellow-400/10 text-yellow-400 rounded-full">Adobe After Effects</span>
+                          </div>
+                        </div>
+                      </div>
+                    </Parallax>
+                  </div>
                 </div>
               </div>
             </div>
