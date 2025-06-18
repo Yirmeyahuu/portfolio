@@ -139,9 +139,11 @@ const Home: React.FC = () => {
             style={{ transitionDelay: '500ms' }}
           >
             <div className="container mx-auto px-4 md:px-8 lg:px-12">
-              <h2 className="text-xl md:text-2xl font-bold text-white mb-16 md:mb-32 text-center transform transition-all duration-1000">
-                About Me
-              </h2>
+                <div className="hidden md:block">
+                  <Parallax translateY={[15, -15]} opacity={[0.8, 1]} speed={-3}>
+                    <h2 className="text-2xl font-bold shine-effect mb-16 md:mb-32  text-center">About me</h2>
+                  </Parallax>
+                </div>
               <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-8 md:gap-16 max-w-7xl mx-auto">
                 {/* Left Column - Photo */}
                 <div className="w-full md:w-1/2 max-w-[400px] transform transition-all duration-1000 px-4 md:px-0 mb-4 md:mb-0">
