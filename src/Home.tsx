@@ -270,9 +270,11 @@ const Home: React.FC = () => {
             style={{ transitionDelay: '400ms' }}
           >
             <div className="container mx-auto px-4 md:px-2 lg:px-4">
-              <Parallax translateY={[15, -15]} opacity={[0.8, 1]} speed={-3}>
-                <h2 className="text-2xl font-bold text-white mb-16 text-center">Web Projects</h2>
-              </Parallax>
+                <div className="hidden md:block">
+                  <Parallax translateY={[15, -15]} opacity={[0.8, 1]} speed={-3}>
+                    <h2 className="text-2xl font-bold shine-effect mb-16 text-center">Web Projects</h2>
+                  </Parallax>
+                </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-4 md:px-0">
                 {/* Project Card 1 */}
                 <div className="md:hidden">
@@ -479,7 +481,6 @@ const Home: React.FC = () => {
 
               {/* Video Projects Row */}
               <div className="mt-16">
-                <h2 className="md:hidden text-2xl font-bold shine-effect mb-16 text-center">Video Projects</h2>
                 <div className="hidden md:block">
                   <Parallax translateY={[15, -15]} opacity={[0.8, 1]} speed={-3}>
                     <h2 className="text-2xl font-bold shine-effect mb-16 text-center">Video Projects</h2>
@@ -682,7 +683,7 @@ const Home: React.FC = () => {
                         <path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/>
                       </svg>
                     </a>
-                    <a 
+                    <a
                       href="https://www.instagram.com/poypoy.div/" 
                       target="_blank"
                       rel="noopener noreferrer"
