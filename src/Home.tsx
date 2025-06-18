@@ -139,9 +139,9 @@ const Home: React.FC = () => {
             style={{ transitionDelay: '500ms' }}
           >
             <div className="container mx-auto px-4 md:px-8 lg:px-12">
-                <div className="hidden md:block">
+                <div>
                   <Parallax translateY={[15, -15]} opacity={[0.8, 1]} speed={-3}>
-                    <h2 className="text-2xl font-bold shine-effect mb-16 md:mb-32  text-center">About me</h2>
+                    <h2 className="text-2xl font-bold shine-effect mb-16 md:mb-32 text-center">About me</h2>
                   </Parallax>
                 </div>
               <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-8 md:gap-16 max-w-7xl mx-auto">
@@ -277,7 +277,12 @@ const Home: React.FC = () => {
                     <h2 className="text-2xl font-bold shine-effect mb-16 text-center">Web Projects</h2>
                   </Parallax>
                 </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-4 md:px-0">
+                <div className="md:hidden mb-16">
+                  <Parallax translateY={[15, -15]} opacity={[0.8, 1]} speed={-3}>
+                    <h2 className="text-2xl font-bold shine-effect text-center">Web Projects</h2>
+                  </Parallax>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-4 md:px-0">
                 {/* Project Card 1 */}
                 <div className="md:hidden">
                   <Parallax translateY={[15, -15]} opacity={[0.8, 1]} speed={-3}>
@@ -483,6 +488,11 @@ const Home: React.FC = () => {
 
               {/* Video Projects Row */}
               <div className="mt-16">
+                <div className="md:hidden mb-16">
+                  <Parallax translateY={[15, -15]} opacity={[0.8, 1]} speed={-3}>
+                    <h2 className="text-2xl font-bold shine-effect text-center">Video Projects</h2>
+                  </Parallax>
+                </div>
                 <div className="hidden md:block">
                   <Parallax translateY={[15, -15]} opacity={[0.8, 1]} speed={-3}>
                     <h2 className="text-2xl font-bold shine-effect mb-16 text-center">Video Projects</h2>
