@@ -14,6 +14,7 @@ const camp2024Video = '/portfolio/videos/FSBC Post Camp 2024.mp4';
 const camp2025Video = '/portfolio/videos/FSBC Post Camp 2025.mp4';
 
 
+
 const Home: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -272,16 +273,36 @@ const Home: React.FC = () => {
             style={{ transitionDelay: '400ms' }}
           >
             <div className="container mx-auto px-4 md:px-2 lg:px-4">
-                <div className="hidden md:block">
-                  <Parallax translateY={[15, -15]} opacity={[0.8, 1]} speed={-3}>
-                    <h2 className="text-2xl font-bold shine-effect mb-16 text-center">Web Projects</h2>
-                  </Parallax>
-                </div>
-                <div className="md:hidden mb-16">
-                  <Parallax translateY={[15, -15]} opacity={[0.8, 1]} speed={-3}>
-                    <h2 className="text-2xl font-bold shine-effect text-center">Web Projects</h2>
-                  </Parallax>
-                </div>
+              <div className="md:hidden mb-16">
+                    <div className="flex items-center justify-between mb-16">
+                      <div className="flex-grow ml-16 text-center">
+                        <Parallax translateY={[15, -15]} opacity={[0.8, 1]} speed={-3}>
+                          <h2 className="text-2xl font-bold shine-effect">Web Projects</h2>
+                        </Parallax>
+                      </div>
+                      <a href="/portfolio/video-projects" className="text-yellow-400 hover:text-yellow-500 mr-4 transition-colors duration-300 flex items-center">
+                        <span className="text-sm">See all</span>
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                  <div className="hidden md:block">
+                    <div className="flex items-center justify-between mb-16">
+                      <div className="flex-grow text-center">
+                        <Parallax translateY={[15, -15]} opacity={[0.8, 1]} speed={-3}>
+                          <h2 className="text-2xl font-bold shine-effect">Web Projects</h2>
+                        </Parallax>
+                      </div>
+                      <a href="/portfolio/video-projects" className="text-yellow-400 hover:text-yellow-500 transition-colors duration-300 flex items-center gap-2">
+                        <span className="text-sm">See all Projects</span>
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-4 md:px-0">
                 {/* Project Card 1 */}
                 <div className="md:hidden">
@@ -489,14 +510,34 @@ const Home: React.FC = () => {
               {/* Video Projects Row */}
               <div className="mt-16">
                 <div className="md:hidden mb-16">
-                  <Parallax translateY={[15, -15]} opacity={[0.8, 1]} speed={-3}>
-                    <h2 className="text-2xl font-bold shine-effect text-center">Video Projects</h2>
-                  </Parallax>
+                  <div className="flex items-center justify-between mb-16">
+                    <div className="flex-grow ml-16 text-center">
+                      <Parallax translateY={[15, -15]} opacity={[0.8, 1]} speed={-3}>
+                        <h2 className="text-2xl font-bold shine-effect">Video Projects</h2>
+                      </Parallax>
+                    </div>
+                    <a href="/portfolio/video-projects" className="text-yellow-400 hover:text-yellow-500 mr-4 transition-colors duration-300 flex items-center">
+                      <span className="text-sm">See all</span>
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
+                      </svg>
+                    </a>
+                  </div>
                 </div>
                 <div className="hidden md:block">
-                  <Parallax translateY={[15, -15]} opacity={[0.8, 1]} speed={-3}>
-                    <h2 className="text-2xl font-bold shine-effect mb-16 text-center">Video Projects</h2>
-                  </Parallax>
+                  <div className="flex items-center justify-between mb-16">
+                    <div className="flex-grow text-center">
+                      <Parallax translateY={[15, -15]} opacity={[0.8, 1]} speed={-3}>
+                        <h2 className="text-2xl font-bold shine-effect">Video Projects</h2>
+                      </Parallax>
+                    </div>
+                    <a href="/portfolio/video-projects" className="text-yellow-400 hover:text-yellow-500 transition-colors duration-300 flex items-center gap-2">
+                      <span className="text-sm">See all Projects</span>
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
+                      </svg>
+                    </a>
+                  </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto px-4 md:px-0">
 
