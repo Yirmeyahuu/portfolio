@@ -1,18 +1,17 @@
-import { useState, useEffect } from 'react'
-import './App.css'
+import { useState, useEffect } from 'react';
+import './App.css';
 import Home from "./Home";
 import Preloader from './components/Preloader';
 import ParticlesBackground from './components/ParticlesBackground';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   const [loading, setLoading] = useState(true);
   const [contentReady, setContentReady] = useState(false);
 
   useEffect(() => {
-    // Show preloader for 5 seconds
     const timer = setTimeout(() => {
       setLoading(false);
-      // Add a small delay before showing content to ensure smooth transition
       setTimeout(() => setContentReady(true), 100);
     }, 5000);
 
@@ -32,6 +31,8 @@ function App() {
       <div className={loading ? 'hidden' : 'relative z-10'}>
         {contentReady && <Home />}
       </div>
+
+      <Analytics />
     </>
   );
 }
