@@ -14,13 +14,25 @@ import {
   Instagram,
   Globe,
   ChevronRight,
-  Moon,        // Add Moon
+  Moon,
   Sun,
 } from 'lucide-react'
+import Preloader from '../Preloader';
 
 export default function MainSection() {
   const [activeTab, setActiveTab] = useState('about')
   const [darkMode, setDarkMode] = useState(true)
+  const [loading, setLoading] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+      // Trigger animation after preloader
+      setTimeout(() => setIsVisible(true), 50);
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     // Check localStorage and system preference
@@ -156,12 +168,19 @@ export default function MainSection() {
     }
   ]
 
+  if (loading) return <Preloader />;
+  
   return (
     <div className="min-h-screen bg-white dark:bg-[#0a0a0a] transition-colors duration-300">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <div className={`max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 transition-all duration-700 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}>
         
         {/* Header/Profile Section */}
-        <div className="relative bg-white dark:bg-[#1a1a1a] rounded-3xl shadow-lg dark:shadow-2xl p-6 sm:p-8 mb-6 border border-gray-100 dark:border-gray-800 transition-colors duration-300 mt-8">
+        <div className={`relative bg-white dark:bg-[#1a1a1a] rounded-3xl shadow-lg dark:shadow-2xl p-6 sm:p-8 mb-6 border border-gray-100 dark:border-gray-800 transition-all duration-500 hover:shadow-xl dark:hover:shadow-2xl mt-8 ${
+          isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+        }`}
+        style={{ transitionDelay: '100ms' }}>
           {/* Theme Toggle Button - Top Right Corner */}
           <div className="absolute top-6 right-6 z-10">
             <button
@@ -243,12 +262,15 @@ export default function MainSection() {
 
               {/* Action Buttons */}
               <div className="flex flex-wrap gap-3">
-                <button className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-[#2a2a2a] border border-gray-300 dark:border-gray-700 rounded-xl hover:bg-gray-50 dark:hover:bg-[#333] transition-colors text-xs md:text-xs lg:text-xs text-gray-900 dark:text-white">
+                <button className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-[#2a2a2a] border border-gray-300 dark:border-gray-700 rounded-xl hover:bg-gray-50 dark:hover:bg-[#333] transition-all duration-300 hover:scale-105 text-xs md:text-xs lg:text-xs text-gray-900 dark:text-white">
                   <Calendar size={18} />
                   <span>Schedule a Call</span>
                   <ChevronRight size={16} />
                 </button>
-                <button className="flex items-center gap-2 px-2.5 py-1 bg-white dark:bg-[#2a2a2a] border border-gray-300 dark:border-gray-700 rounded-xl hover:bg-gray-50 dark:hover:bg-[#333] transition-colors text-xs md:text-xs lg:text-xs text-gray-900 dark:text-white">
+                <button 
+                  onClick={() => window.location.href = 'mailto:jeremiahpantaras@gmail.com'}
+                  className="flex items-center gap-2 px-2.5 py-1 bg-white dark:bg-[#2a2a2a] border border-gray-300 dark:border-gray-700 rounded-xl hover:bg-gray-50 dark:hover:bg-[#333] transition-all duration-300 hover:scale-105 text-xs md:text-xs lg:text-xs text-gray-900 dark:text-white"
+                >
                   <Mail size={18} />
                   <span>Send Email</span>
                 </button>
@@ -264,7 +286,7 @@ export default function MainSection() {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-lg bg-gray-100 dark:bg-[#2a2a2a] hover:bg-gray-200 dark:hover:bg-[#333] transition-colors"
+                      className="p-2 rounded-lg bg-gray-100 dark:bg-[#2a2a2a] hover:bg-gray-200 dark:hover:bg-[#333] transition-all duration-300 hover:scale-110"
                       aria-label={social.label}
                     >
                       <Icon size={20} className="text-gray-700 dark:text-gray-300" />
@@ -277,7 +299,10 @@ export default function MainSection() {
         </div>
 
         {/* Company Section */}
-        <div className="bg-white dark:bg-[#1a1a1a] rounded-3xl shadow-lg dark:shadow-2xl p-6 sm:p-8 mb-6 border border-gray-100 dark:border-gray-800 transition-colors duration-300">
+        <div className={`bg-white dark:bg-[#1a1a1a] rounded-3xl shadow-lg dark:shadow-2xl p-6 sm:p-8 mb-6 border border-gray-100 dark:border-gray-800 transition-all duration-500 hover:shadow-xl dark:hover:shadow-2xl ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+        }`}
+        style={{ transitionDelay: '200ms' }}>
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
             {/* Company Logo */}
             <div className="flex-shrink-0">
@@ -332,14 +357,24 @@ export default function MainSection() {
           <div className="lg:col-span-2 space-y-6">
             
             {/* About Section */}
-            <div className="bg-white dark:bg-[#1a1a1a] rounded-3xl shadow-lg dark:shadow-2xl p-6 sm:p-8 border border-gray-100 dark:border-gray-800 transition-colors duration-300">
+            <div className={`bg-white dark:bg-[#1a1a1a] rounded-3xl shadow-lg dark:shadow-2xl p-6 sm:p-8 border border-gray-100 dark:border-gray-800 transition-all duration-500 hover:shadow-xl dark:hover:shadow-2xl ${
+              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
+            }`}
+            style={{ transitionDelay: '300ms' }}>
               <div className="flex items-center gap-2 mb-4">
                 <div className="p-2 bg-gray-100 dark:bg-[#2a2a2a] rounded-lg">
                   <Briefcase size={20} className="text-gray-700 dark:text-gray-300" />
                 </div>
                 <h2 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">About</h2>
+                {/* More about me link */}
+                <a
+                  href="/about"
+                  className="ml-auto text-xs text-sky-600 dark:text-sky-400 hover:underline hover:text-sky-700 dark:hover:text-sky-300 font-semibold transition-colors"
+                  style={{ cursor: 'pointer' }}
+                >
+                  More about me &gt;
+                </a>
               </div>
-              
               <div className="space-y-4 text-gray-700 dark:text-gray-300 text-sm sm:text-md leading-relaxed">
                 <p>{profile.bio}</p>
                 <p>{profile.bio2}</p>
@@ -348,12 +383,23 @@ export default function MainSection() {
             </div>
 
             {/* Tech Stack Section */}
-            <div className="bg-white dark:bg-[#1a1a1a] rounded-3xl shadow-lg dark:shadow-2xl p-6 sm:p-8 border border-gray-100 dark:border-gray-800 transition-colors duration-300">
+            <div className={`bg-white dark:bg-[#1a1a1a] rounded-3xl shadow-lg dark:shadow-2xl p-6 sm:p-8 border border-gray-100 dark:border-gray-800 transition-all duration-500 hover:shadow-xl dark:hover:shadow-2xl ${
+              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
+            }`}
+            style={{ transitionDelay: '400ms' }}>
               <div className="flex items-center gap-2 mb-6">
                 <div className="p-2 bg-gray-100 dark:bg-[#2a2a2a] rounded-lg">
                   <Code size={20} className="text-gray-700 dark:text-gray-300" />
                 </div>
                 <h2 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">Tech Stack</h2>
+                {/* View all link */}
+                <a
+                  href="/tech-stacks"
+                  className="ml-auto text-xs text-sky-600 dark:text-sky-400 hover:underline hover:text-sky-700 dark:hover:text-sky-300 font-semibold transition-colors"
+                  style={{ cursor: 'pointer' }}
+                >
+                  View all &gt;
+                </a>
               </div>
 
               <div className="space-y-6">
@@ -366,7 +412,7 @@ export default function MainSection() {
                       {techs.map((tech, index) => (
                         <span
                           key={index}
-                          className="px-2.5 py-1.5 bg-gray-100 dark:bg-[#2a2a2a] text-gray-800 dark:text-gray-200 rounded-lg text-xs font-medium border border-gray-200 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-[#333] transition-colors"
+                          className="px-2.5 py-1.5 bg-gray-100 dark:bg-[#2a2a2a] text-gray-800 dark:text-gray-200 rounded-lg text-xs font-medium border border-gray-200 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-[#333] transition-all duration-300 hover:scale-105"
                         >
                           {tech}
                         </span>
@@ -378,19 +424,30 @@ export default function MainSection() {
             </div>
 
             {/* Projects Section */}
-            <div className="bg-white dark:bg-[#1a1a1a] rounded-3xl shadow-lg dark:shadow-2xl p-6 sm:p-8 border border-gray-100 dark:border-gray-800 transition-colors duration-300">
+            <div className={`bg-white dark:bg-[#1a1a1a] rounded-3xl shadow-lg dark:shadow-2xl p-6 sm:p-8 border border-gray-100 dark:border-gray-800 transition-all duration-500 hover:shadow-xl dark:hover:shadow-2xl ${
+              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
+            }`}
+            style={{ transitionDelay: '500ms' }}>
               <div className="flex items-center gap-2 mb-6">
                 <div className="p-2 bg-gray-100 dark:bg-[#2a2a2a] rounded-lg">
                   <Code size={20} className="text-gray-700 dark:text-gray-300" />
                 </div>
                 <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Projects</h2>
+                {/* View all projects link */}
+                <a
+                  href="/projects"
+                  className="ml-auto text-xs text-sky-600 dark:text-sky-400 hover:underline hover:text-sky-700 dark:hover:text-sky-300 font-semibold transition-colors"
+                  style={{ cursor: 'pointer' }}
+                >
+                  View all projects &gt;
+                </a>
               </div>
-
+            
               <div className="space-y-4">
                 {projects.map((project, index) => (
                   <div
                     key={index}
-                    className="p-4 sm:p-6 bg-gray-50 dark:bg-[#2a2a2a] rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 transition-all cursor-pointer group"
+                    className="p-4 sm:p-6 bg-gray-50 dark:bg-[#2a2a2a] rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 transition-all duration-300 cursor-pointer group hover:scale-[1.02] hover:shadow-lg"
                   >
                     <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-500 transition-colors">
                       {project.title}
@@ -402,7 +459,7 @@ export default function MainSection() {
                       {project.tags.map((tag, i) => (
                         <span
                           key={i}
-                          className="px-2.5 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 rounded-lg text-xs font-medium"
+                          className="px-2.5 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 rounded-lg text-xs font-medium transition-all duration-300 hover:scale-105"
                         >
                           {tag}
                         </span>
@@ -418,23 +475,33 @@ export default function MainSection() {
           <div className="space-y-6">
             
             {/* Experience Section */}
-            <div className="bg-white dark:bg-[#1a1a1a] rounded-3xl shadow-lg dark:shadow-2xl p-6 sm:p-8 border border-gray-100 dark:border-gray-800 transition-colors duration-300">
+            <div className={`bg-white dark:bg-[#1a1a1a] rounded-3xl shadow-lg dark:shadow-2xl p-6 sm:p-8 border border-gray-100 dark:border-gray-800 transition-all duration-500 hover:shadow-xl dark:hover:shadow-2xl ${
+              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
+            }`}
+            style={{ transitionDelay: '300ms' }}>
               <div className="flex items-center gap-2 mb-6">
                 <div className="p-2 bg-gray-100 dark:bg-[#2a2a2a] rounded-lg">
                   <Briefcase size={20} className="text-gray-700 dark:text-gray-300" />
                 </div>
                 <h2 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">Experience</h2>
+                {/* View all experiences link */}
+                <a
+                  href="/experience"
+                  className="ml-auto text-xs text-sky-600 dark:text-sky-400 hover:underline hover:text-sky-700 dark:hover:text-sky-300 font-semibold transition-colors"
+                  style={{ cursor: 'pointer' }}
+                >
+                  View all &gt;
+                </a>
               </div>
-
+            
               <div className="space-y-6">
                 {experiences.map((exp, index) => (
-                  <div key={index} className="relative pl-6 pb-6 border-l-2 border-gray-200 dark:border-gray-700 last:border-l-0 last:pb-0">
+                  <div key={index} className="relative pl-6 pb-6 border-l-2 border-gray-200 dark:border-gray-700 last:border-l-0 last:pb-0 transition-all duration-300 hover:translate-x-2">
                     <div className={`absolute left-[-9px] top-0 w-4 h-4 rounded-full border-2 ${
                       exp.current 
-                        ? 'bg-blue-500 border-blue-500' 
+                        ? 'bg-blue-500 border-blue-500 animate-pulse' 
                         : 'bg-gray-300 dark:bg-gray-600 border-gray-300 dark:border-gray-600'
                     }`} />
-                    
                     <div>
                       <h3 className="font-bold text-sm md:text-sm text-gray-900 dark:text-white mb-1">
                         {exp.role}
@@ -443,11 +510,11 @@ export default function MainSection() {
                         {exp.company}
                       </p>
                       <div className="flex items-center gap-2">
-                        <span className="text-xs px-2 py-1 bg-gray-100 dark:bg-[#2a2a2a] text-gray-700 dark:text-gray-300 rounded">
+                        <span className="text-xs px-2 py-1 bg-gray-100 dark:bg-[#2a2a2a] text-gray-700 dark:text-gray-300 rounded transition-all duration-300 hover:scale-105">
                           {exp.year}
                         </span>
                         {exp.current && (
-                          <span className="text-xs px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded font-medium">
+                          <span className="text-xs px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded font-medium transition-all duration-300 hover:scale-105 animate-pulse">
                             Current
                           </span>
                         )}
@@ -459,22 +526,33 @@ export default function MainSection() {
             </div>
 
             {/* Certifications Section */}
-            <div className="bg-white dark:bg-[#1a1a1a] rounded-3xl shadow-lg dark:shadow-2xl p-6 sm:p-8 border border-gray-100 dark:border-gray-800 transition-colors duration-300">
+            <div className={`bg-white dark:bg-[#1a1a1a] rounded-3xl shadow-lg dark:shadow-2xl p-6 sm:p-8 border border-gray-100 dark:border-gray-800 transition-all duration-500 hover:shadow-xl dark:hover:shadow-2xl ${
+              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
+            }`}
+            style={{ transitionDelay: '400ms' }}>
               <div className="flex items-center gap-2 mb-6">
                 <div className="p-2 bg-gray-100 dark:bg-[#2a2a2a] rounded-lg">
                   <Award size={20} className="text-gray-700 dark:text-gray-300" />
                 </div>
-                <h2 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">Recent Certifications</h2>
+                <h2 className="text-md sm:text-md font-bold text-gray-900 dark:text-white">Recent Certifications</h2>
+                {/* View all certifications link */}
+                <a
+                  href="/certifications"
+                  className="ml-auto text-xs text-sky-600 dark:text-sky-400 hover:underline hover:text-sky-700 dark:hover:text-sky-300 font-semibold transition-colors"
+                  style={{ cursor: 'pointer' }}
+                >
+                  View all &gt;
+                </a>
               </div>
-
+            
               <div className="space-y-4">
                 {certifications.map((cert, index) => (
                   <div
                     key={index}
-                    className="p-4 bg-gray-50 dark:bg-[#2a2a2a] rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 transition-all cursor-pointer"
+                    className="p-4 bg-gray-50 dark:bg-[#2a2a2a] rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 transition-all duration-300 cursor-pointer hover:scale-[1.02] hover:shadow-lg"
                   >
                     <div className="flex items-start gap-3">
-                      <span className="text-2xl">{cert.badge}</span>
+                      <span className="text-2xl transition-transform duration-300 hover:scale-125">{cert.badge}</span>
                       <div className="flex-1">
                         <h3 className="font-bold text-gray-900 dark:text-white mb-1 text-sm">
                           {cert.title}
@@ -482,7 +560,7 @@ export default function MainSection() {
                         <p className="text-xs text-gray-600 dark:text-gray-400">
                           {cert.issuer}
                         </p>
-                        <span className="text-xs px-2 py-1 bg-gray-200 dark:bg-[#1a1a1a] text-gray-700 dark:text-gray-300 rounded mt-2 inline-block">
+                        <span className="text-xs px-2 py-1 bg-gray-200 dark:bg-[#1a1a1a] text-gray-700 dark:text-gray-300 rounded mt-2 inline-block transition-all duration-300 hover:scale-105">
                           {cert.year}
                         </span>
                       </div>
@@ -494,7 +572,10 @@ export default function MainSection() {
           </div>
         </div>
                 {/* Footer Section */}
-        <footer className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
+        <footer className={`mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 transition-all duration-500 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+        }`}
+        style={{ transitionDelay: '600ms' }}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             {/* About Column */}
             <div>
@@ -513,7 +594,7 @@ export default function MainSection() {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-lg bg-gray-100 dark:bg-[#1a1a1a] hover:bg-gray-200 dark:hover:bg-[#2a2a2a] transition-colors"
+                      className="p-2 rounded-lg bg-gray-100 dark:bg-[#1a1a1a] hover:bg-gray-200 dark:hover:bg-[#2a2a2a] transition-all duration-300 hover:scale-110"
                       aria-label={social.label}
                     >
                       <Icon size={18} className="text-gray-700 dark:text-gray-300" />
