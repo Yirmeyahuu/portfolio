@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brandBlue-darkest: #00152c;
+  --color-brandBlue-dark: #001f40;
+  --color-brandBlue-medium: #002853;
+  
+  --font-family-sans: Raleway, system-ui, sans-serif;
+  --font-family-heading: Poppins, system-ui, sans-serif;
+}
+
+/* Enable dark mode with class strategy */
+@variant dark (&:where(.dark, .dark *));
+
+body {
+  @apply transition-colors duration-300;
+}
+
+/* Light mode */
+body.light {
+  @apply bg-gray-50 text-gray-900;
+}
+
+/* Dark mode */
+body.dark {
+  @apply bg-[#0a0a0a] text-white;
+}
+
+.blur-3xl {
+  filter: blur(40px);
+  -webkit-filter: blur(40px);
+}
+
+/* Scrollbar styling for dark mode */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-600 rounded-full;
+}
+
+body.light ::-webkit-scrollbar-thumb {
+  @apply bg-gray-400;
+}
+
+@keyframes float-1 {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(10px, -15px);
+    opacity: 0.6;
+  }
+}
+
+@keyframes float-2 {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translate(-15px, 20px);
+    opacity: 0.5;
+  }
+}
+
+@keyframes float-3 {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(-8px, -10px);
+    opacity: 0.7;
+  }
+}
+
+@keyframes float-4 {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translate(12px, 8px);
+    opacity: 0.55;
+  }
+}
+
+@keyframes float-5 {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translate(-5px, 12px);
+    opacity: 0.65;
+  }
+}
+
+.animate-float-1 {
+  animation: float-1 4s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: float-2 5s ease-in-out infinite;
+}
+
+.animate-float-3 {
+  animation: float-3 3.5s ease-in-out infinite;
+}
+
+.animate-float-4 {
+  animation: float-4 4.5s ease-in-out infinite;
+}
+
+.animate-float-5 {
+  animation: float-5 3s ease-in-out infinite;
+}
