@@ -113,15 +113,15 @@ export default function MainSection() {
   // Projects
   const projects = [
     {
-      title: 'Avendro - Lending Management System',
-      description: 'A comprehensive system to manage lending operations, from client onboarding to payment tracking.',
-      tags: ['Python Django', 'PostgreSQL', 'Tailwind CSS'],
+      title: 'Tabang Negros - Emergency Help Request System',
+      description: 'A real-time emergency help request system designed for Negros Island, Philippines. Allows users to quickly send emergency requests with exact GPS location to responders.',
+      tags: ['React', 'Django', 'PostgreSQL', 'Leaflet', 'Tailwind CSS', 'Vite'],
       link: '#'
     },
     {
-      title: 'Sentinels - Gamified Cybersecurity Education',
-      description: 'An interactive mobile application that teaches cybersecurity concepts through engaging games and quizzes.',
-      tags: ['C#', 'Firebase', 'Unity Engine', 'Python', 'Django'],
+      title: 'Avendro - Lending Management System',
+      description: 'A comprehensive system to manage lending operations, from client onboarding to payment tracking.',
+      tags: ['Python Django', 'PostgreSQL', 'Tailwind CSS'],
       link: '#'
     },
     {
@@ -611,22 +611,22 @@ export default function MainSection() {
               </h3>
               <ul className="space-y-2">
                 <li>
-                  <a href="#about" className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
+                  <a href="/about" className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
                     About
                   </a>
                 </li>
                 <li>
-                  <a href="#experience" className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
+                  <a href="/experience" className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
                     Experience
                   </a>
                 </li>
                 <li>
-                  <a href="#projects" className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
+                  <a href="/projects" className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
                     Projects
                   </a>
                 </li>
                 <li>
-                  <a href="#tech-stack" className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
+                  <a href="/tech-stacks" className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
                     Tech Stack
                   </a>
                 </li>
