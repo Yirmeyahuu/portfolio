@@ -130,18 +130,6 @@ export default function MainSection() {
       tags: ['Python Django', 'PostgreSQL', 'Tailwind CSS'],
       link: 'https://avendrobcd.onrender.com/'
     },
-    {
-      title: 'Marketplace - E-commerce Platform',
-      description: 'A full-featured e-commerce website with product listings, user accounts, and a secure checkout process.',
-      tags: ['Python', 'Django', 'React', 'PostgreSQL'],
-      link: '#'
-    },
-    {
-      title: 'Construction Inventory Management System',
-      description: 'A comprehensive system for managing construction inventory, including tracking materials, equipment, and supplies.',
-      tags: ['Python', 'Django', 'React', 'Tailwind CSS', 'PostgreSQL'],
-      link: '#'
-    },
   ]
 
   // Tech Stack
