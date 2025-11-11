@@ -113,16 +113,22 @@ export default function MainSection() {
   // Projects
   const projects = [
     {
+      title: 'Askium - AI Chatbot with Ollama',
+      description: 'A modern, full-stack AI chatbot application powered by local LLMs',
+      tags: ['Python Django', 'Ollama - Local LLM','Vite React', 'Tailwind CSS'],
+      link: 'https://github.com/Yirmeyahuu/Askium'
+    },
+    {
       title: 'Tabang Negros - Emergency Help Request System',
       description: 'A real-time emergency help request system designed for Negros Island, Philippines. Allows users to quickly send emergency requests with exact GPS location to responders.',
       tags: ['React', 'Django', 'PostgreSQL', 'Leaflet', 'Tailwind CSS', 'Vite'],
-      link: '#'
+      link: 'https://tabangnegros-installation.vercel.app/'
     },
     {
       title: 'Avendro - Lending Management System',
       description: 'A comprehensive system to manage lending operations, from client onboarding to payment tracking.',
       tags: ['Python Django', 'PostgreSQL', 'Tailwind CSS'],
-      link: '#'
+      link: 'https://avendrobcd.onrender.com/'
     },
     {
       title: 'Marketplace - E-commerce Platform',
