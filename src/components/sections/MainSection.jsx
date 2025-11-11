@@ -91,6 +91,12 @@ export default function MainSection() {
   // Experience
   const experiences = [
     {
+      role: 'Software Engineer - Full-Stack Developer',
+      company: 'COS Devs',
+      year: '2025',
+      current: true
+    },
+    {
       role: 'Project Manager / Lead Web Developer',
       company: 'Computer Science Thesis',
       year: '2024',
@@ -100,12 +106,6 @@ export default function MainSection() {
       role: 'Freelance Full-Stack Developer',
       company: 'Bacolod City, Philippines',
       year: '2024',
-      current: true
-    },
-    {
-      role: 'Software Engineering Lead',
-      company: 'COS Devs',
-      year: '2025',
       current: true
     },
   ]
