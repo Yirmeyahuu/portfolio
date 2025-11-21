@@ -6,6 +6,7 @@ import TechStacks from './pages/TechStacks';
 import Projects from './pages/Projects';
 import Certifications from './pages/Certifications';
 import Experience from './pages/Experience';
+import Workshop from './pages/Workshop';
 import { Analytics } from "@vercel/analytics/react";
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/certifications" element={<Certifications />} />
           <Route path="/experience" element={<Experience />} />
+          <Route path="/workshops" element={<Workshop />} />
         </Routes>
         <Analytics />
       </div>

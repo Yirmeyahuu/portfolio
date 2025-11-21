@@ -162,6 +162,28 @@ export default function MainSection() {
     }
   ]
 
+  // Seminars & Workshops
+const workshops = [
+  {
+    title: 'DevFest Workshop Series: Introduction to Web Development',
+    organizer: 'Google Developer Groups',
+    year: '2025',
+    badge: '🧑🏻‍💻'
+  },
+  {
+    title: 'House of Algorithm Seminar and Workshop',
+    organizer: 'STIWNU Programmers\' Guild',
+    year: '2025',
+    badge: '🧑🏻‍💻'
+  },
+  {
+    title: 'Philippines Institute of Cyber Security Professionals Workshop',
+    organizer: 'PICSPRO Inc.',
+    year: '2024',
+    badge: '🪪'
+  }
+]
+
   if (loading) return <Preloader />;
   
   return (
@@ -392,7 +414,7 @@ export default function MainSection() {
                   className="ml-auto text-xs text-sky-600 dark:text-sky-400 hover:underline hover:text-sky-700 dark:hover:text-sky-300 font-semibold transition-colors"
                   style={{ cursor: 'pointer' }}
                 >
-                  View all &gt;
+                  View all
                 </a>
               </div>
 
@@ -433,7 +455,7 @@ export default function MainSection() {
                   className="ml-auto text-xs text-sky-600 dark:text-sky-400 hover:underline hover:text-sky-700 dark:hover:text-sky-300 font-semibold transition-colors"
                   style={{ cursor: 'pointer' }}
                 >
-                  View all projects &gt;
+                  View all projects
                 </a>
               </div>
             
@@ -484,7 +506,7 @@ export default function MainSection() {
                   className="ml-auto text-xs text-sky-600 dark:text-sky-400 hover:underline hover:text-sky-700 dark:hover:text-sky-300 font-semibold transition-colors"
                   style={{ cursor: 'pointer' }}
                 >
-                  View all &gt;
+                  View all
                 </a>
               </div>
             
@@ -535,7 +557,7 @@ export default function MainSection() {
                   className="ml-auto text-xs text-sky-600 dark:text-sky-400 hover:underline hover:text-sky-700 dark:hover:text-sky-300 font-semibold transition-colors"
                   style={{ cursor: 'pointer' }}
                 >
-                  View all &gt;
+                  View all
                 </a>
               </div>
             
@@ -562,10 +584,54 @@ export default function MainSection() {
                   </div>
                 ))}
               </div>
+            </div>            
+            {/* Seminars / Workshops Section */}
+            <div className={`bg-white dark:bg-[#1a1a1a] rounded-3xl shadow-lg dark:shadow-2xl p-6 sm:p-8 border border-gray-100 dark:border-gray-800 transition-all duration-500 hover:shadow-xl dark:hover:shadow-2xl ${
+              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
+            }`}
+            style={{ transitionDelay: '400ms' }}>
+              <div className="flex items-center gap-2 mb-6">
+                <div className="p-2 bg-gray-100 dark:bg-[#2a2a2a] rounded-lg">
+                  <Award size={20} className="text-gray-700 dark:text-gray-300" />
+                </div>
+                <h2 className="text-md sm:text-md font-bold text-gray-900 dark:text-white">Seminars & Workshops</h2>
+                {/* View all Workshops link */}
+                <a
+                  href="/workshops"
+                  className="ml-auto text-xs text-sky-600 dark:text-sky-400 hover:underline hover:text-sky-700 dark:hover:text-sky-300 font-semibold transition-colors"
+                  style={{ cursor: 'pointer' }}
+                >
+                  View all
+                </a>
+              </div>
+            
+              <div className="space-y-4">
+                {workshops.map((workshop, index) => (
+                  <div
+                    key={index}
+                    className="p-4 bg-gray-50 dark:bg-[#2a2a2a] rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 transition-all duration-300 cursor-pointer hover:scale-[1.02] hover:shadow-lg"
+                  >
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl transition-transform duration-300 hover:scale-125">{workshop.badge}</span>
+                      <div className="flex-1">
+                        <h3 className="font-bold text-gray-900 dark:text-white mb-1 text-sm">
+                          {workshop.title}
+                        </h3>
+                        <p className="text-xs text-gray-600 dark:text-gray-400">
+                          {workshop.organizer}
+                        </p>
+                        <span className="text-xs px-2 py-1 bg-gray-200 dark:bg-[#1a1a1a] text-gray-700 dark:text-gray-300 rounded mt-2 inline-block transition-all duration-300 hover:scale-105">
+                          {workshop.year}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-                {/* Footer Section */}
+        {/* Footer Section */}
         <footer className={`mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 transition-all duration-500 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
         }`}
