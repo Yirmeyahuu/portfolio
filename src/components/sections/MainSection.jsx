@@ -70,7 +70,7 @@ export default function MainSection() {
   // Personal Info
   const profile = { 
     name: 'Jeremiah Pantaras',
-    title: 'Junior Software Engineer | Full-Stack Developer',
+    title: 'Software Engineer | Full-Stack Developer',
     location: 'Bacolod City, Negros Occidental, Philippines',
     email: 'jeremiahpantaras@gmail.com',
     avatar: '/poypoy.png',
@@ -166,9 +166,9 @@ export default function MainSection() {
 const workshops = [
   {
     title: 'DevFest Workshop Series: Introduction to Web Development',
-    organizer: 'Google Developer Groups',
+    organizer: 'Google Developer Groups Bacolod',
     year: '2025',
-    badge: '🧑🏻‍💻'
+    badge: '📲'
   },
   {
     title: 'House of Algorithm Seminar and Workshop',
@@ -234,7 +234,7 @@ const workshops = [
                 </div>
                 
                 {/* Image overlapping the container */}
-                <div className="absolute -inset-2 flex items-center justify-center mt-12">
+                <div className="absolute -inset-2 flex items-center justify-center mt-12 cursor-ns-resize">
                   {profile.avatar ? (
                     <img 
                       src={profile.avatar} 
@@ -254,7 +254,7 @@ const workshops = [
             <div className="flex-1 w-full">
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
                 <div>
-                  <h1 className="text-2xl sm:text-lg lg:text-2xl font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+                  <h1 className="text-2xl sm:text-lg lg:text-2xl font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2 cursor-default">
                     {profile.name}
                     <span className="inline-flex items-center justify-center w-5 h-5 bg-blue-500 rounded-full">
                       <svg 
@@ -266,11 +266,11 @@ const workshops = [
                       </svg>
                     </span>
                   </h1>
-                  <div className="flex items-center gap-2 text-xs md:text-xs lg:text-xs text-gray-600 dark:text-gray-300 mb-3">
+                  <div className="flex items-center gap-2 text-xs md:text-xs lg:text-xs text-gray-600 dark:text-gray-300 mb-3 cursor-default">
                     <MapPin size={16} />
                     <span className="text-sm">{profile.location}</span>
                   </div>
-                  <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300">
+                  <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 cursor-default">
                     {profile.title}
                   </p>
                 </div>
@@ -278,14 +278,14 @@ const workshops = [
 
               {/* Action Buttons */}
               <div className="flex flex-wrap gap-3">
-                <button className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-[#2a2a2a] border border-gray-300 dark:border-gray-700 rounded-xl hover:bg-gray-50 dark:hover:bg-[#333] transition-all duration-300 hover:scale-105 text-xs md:text-xs lg:text-xs text-gray-900 dark:text-white">
+                <button className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-[#2a2a2a] border border-gray-300 dark:border-gray-700 rounded-xl hover:bg-gray-50 dark:hover:bg-[#333] transition-all duration-300 hover:scale-105 text-xs md:text-xs lg:text-xs text-gray-900 dark:text-white cursor-pointer">
                   <Calendar size={18} />
                   <span>Schedule a Call</span>
                   <ChevronRight size={16} />
                 </button>
                 <button 
                   onClick={() => window.location.href = 'mailto:jeremiahpantaras@gmail.com'}
-                  className="flex items-center gap-2 px-2.5 py-1 bg-white dark:bg-[#2a2a2a] border border-gray-300 dark:border-gray-700 rounded-xl hover:bg-gray-50 dark:hover:bg-[#333] transition-all duration-300 hover:scale-105 text-xs md:text-xs lg:text-xs text-gray-900 dark:text-white"
+                  className="flex items-center gap-2 px-2.5 py-1 bg-white dark:bg-[#2a2a2a] border border-gray-300 dark:border-gray-700 rounded-xl hover:bg-gray-50 dark:hover:bg-[#333] transition-all duration-300 hover:scale-105 text-xs md:text-xs lg:text-xs text-gray-900 dark:text-white cursor-pointer"
                 >
                   <Mail size={18} />
                   <span>Send Email</span>
@@ -385,10 +385,10 @@ const workshops = [
                 {/* More about me link */}
                 <a
                   href="/about"
-                  className="ml-auto text-xs text-sky-600 dark:text-sky-400 hover:underline hover:text-sky-700 dark:hover:text-sky-300 font-semibold transition-colors"
+                  className="ml-auto text-xs text-sky-600 dark:text-sky-400 hover:underline hover:text-sky-700 dark:hover:text-sky-300 font-semibold transition-colors underline"
                   style={{ cursor: 'pointer' }}
                 >
-                  More about me &gt;
+                  More about me
                 </a>
               </div>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 text-sm sm:text-md leading-relaxed">
@@ -411,7 +411,7 @@ const workshops = [
                 {/* View all link */}
                 <a
                   href="/tech-stacks"
-                  className="ml-auto text-xs text-sky-600 dark:text-sky-400 hover:underline hover:text-sky-700 dark:hover:text-sky-300 font-semibold transition-colors"
+                  className="ml-auto text-xs text-sky-600 dark:text-sky-400 hover:underline hover:text-sky-700 dark:hover:text-sky-300 font-semibold transition-colors underline"
                   style={{ cursor: 'pointer' }}
                 >
                   View all
@@ -452,7 +452,7 @@ const workshops = [
                 {/* View all projects link */}
                 <a
                   href="/projects"
-                  className="ml-auto text-xs text-sky-600 dark:text-sky-400 hover:underline hover:text-sky-700 dark:hover:text-sky-300 font-semibold transition-colors"
+                  className="ml-auto text-xs text-sky-600 dark:text-sky-400 hover:underline hover:text-sky-700 dark:hover:text-sky-300 font-semibold transition-colors underline"
                   style={{ cursor: 'pointer' }}
                 >
                   View all projects
@@ -503,7 +503,7 @@ const workshops = [
                 {/* View all experiences link */}
                 <a
                   href="/experience"
-                  className="ml-auto text-xs text-sky-600 dark:text-sky-400 hover:underline hover:text-sky-700 dark:hover:text-sky-300 font-semibold transition-colors"
+                  className="ml-auto text-xs text-sky-600 dark:text-sky-400 hover:underline hover:text-sky-700 dark:hover:text-sky-300 font-semibold transition-colors underline"
                   style={{ cursor: 'pointer' }}
                 >
                   View all
@@ -554,7 +554,7 @@ const workshops = [
                 {/* View all certifications link */}
                 <a
                   href="/certifications"
-                  className="ml-auto text-xs text-sky-600 dark:text-sky-400 hover:underline hover:text-sky-700 dark:hover:text-sky-300 font-semibold transition-colors"
+                  className="ml-auto text-xs text-sky-600 dark:text-sky-400 hover:underline hover:text-sky-700 dark:hover:text-sky-300 font-semibold transition-colors underline"
                   style={{ cursor: 'pointer' }}
                 >
                   View all
@@ -598,7 +598,7 @@ const workshops = [
                 {/* View all Workshops link */}
                 <a
                   href="/workshops"
-                  className="ml-auto text-xs text-sky-600 dark:text-sky-400 hover:underline hover:text-sky-700 dark:hover:text-sky-300 font-semibold transition-colors"
+                  className="ml-auto text-xs text-sky-600 dark:text-sky-400 hover:underline hover:text-sky-700 dark:hover:text-sky-300 font-semibold transition-colors underline"
                   style={{ cursor: 'pointer' }}
                 >
                   View all

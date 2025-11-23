@@ -19,9 +19,9 @@ export default function Workshop() {
   const workshops = [
     {
       title: 'DevFest Workshop Series: Introduction to Web Development',
-      organizer: 'Google Developer Groups',
+      organizer: 'Google Developer Groups Bacolod',
       year: '2025',
-      badge: '🧑🏻‍💻'
+      badge: '📲'
     },
     {
       title: 'House of Algorithm Seminar and Workshop',
@@ -33,7 +33,7 @@ export default function Workshop() {
       title: 'Mastering Figma: Turning Design Concepts into Interactive Prototypes',
       organizer: 'STIWNU Programmers\' Guild',
       year: '2024',
-      badge: '🧑🏻‍💻'
+      badge: '🍥'
     },
     {
       title: 'Mastering Dimensions: 2D and 3D Concept Arts',
@@ -71,7 +71,7 @@ export default function Workshop() {
         {/* Back Button */}
         <button
           onClick={() => navigate('/')}
-          className="mb-8 flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 rounded-xl hover:bg-gray-200 dark:hover:bg-[#2a2a2a] transition-all duration-300 hover:scale-105 text-gray-900 dark:text-white font-medium"
+          className="mb-8 flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 rounded-xl hover:bg-gray-200 dark:hover:bg-[#2a2a2a] transition-all duration-300 hover:scale-105 text-gray-900 dark:text-white font-medium cursor-pointer"
         >
           <ChevronLeft size={18} />
           Back
@@ -82,7 +82,7 @@ export default function Workshop() {
             <div className="p-2 bg-gray-100 dark:bg-[#2a2a2a] rounded-lg">
               <Award size={20} className="text-gray-700 dark:text-gray-300" />
             </div>
-            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Seminars & Workshops</h1>
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Seminars & Workshops Attended</h1>
           </div>
           <div className="space-y-4">
             {workshops.map((workshop, index) => (
