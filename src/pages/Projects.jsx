@@ -18,6 +18,12 @@ export default function Projects() {
 
   const projects = [
     {
+      title: 'Satoru - Automated learning tool',
+      description: 'Satoru is a web application designed to intelligently summarize and extract key information from uploaded documents, providing users with quick, distilled insights.',
+      tags: ['Python Django', 'Rest-framework','Vite React', 'Typescript', 'GSAP', 'Tailwind CSS'],
+      link: 'https://github.com/Yirmeyahuu/satoru'
+    },
+    {
       title: 'Askium - AI Chatbot with Ollama',
       description: 'A modern, full-stack AI chatbot application powered by local LLMs',
       tags: ['Python Django', 'Ollama - Local LLM','Vite React', 'Tailwind CSS'],
