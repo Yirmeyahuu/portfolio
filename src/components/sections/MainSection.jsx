@@ -1,5 +1,5 @@
 // src/components/sections/MainSection.jsx
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef }  from 'react'
 import { 
   MapPin, 
   Mail, 
@@ -20,6 +20,7 @@ import {
 } from 'lucide-react'
 import Preloader from '../Preloader';
 import Chat from '../chat';
+import OpenCv from '../OpenCv';
 
 export default function MainSection() {
   const [activeTab, setActiveTab] = useState('about')
@@ -27,6 +28,8 @@ export default function MainSection() {
   const [loading, setLoading] = useState(true);
   const [isVisible, setIsVisible] = useState(false);
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const [isCvModalOpen, setIsCvModalOpen] = useState(false);
+  const cvButtonRef = useRef(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -196,7 +199,7 @@ const workshops = [
   if (loading) return <Preloader />;
   
   return (
-    <div className="min-h-screen bg-white dark:bg-[#0a0a0a] transition-colors duration-300">
+    <div className="min-h-screen bg-gray-50 dark:bg-[#0a0a0a] transition-colors duration-300">
       <div className={`max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 transition-all duration-700 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}>
@@ -287,9 +290,13 @@ const workshops = [
 
               {/* Action Buttons */}
               <div className="flex flex-wrap gap-3">
-                <button className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-[#2a2a2a] border border-gray-300 dark:border-gray-700 rounded-xl hover:bg-gray-50 dark:hover:bg-[#333] transition-all duration-300 hover:scale-105 text-xs md:text-xs lg:text-xs text-gray-900 dark:text-white cursor-pointer">
-                  <Calendar size={18} />
-                  <span>Schedule a Call</span>
+                <button 
+                  ref={cvButtonRef}
+                  onClick={() => setIsCvModalOpen(true)}
+                  className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-[#2a2a2a] border border-gray-300 dark:border-gray-700 rounded-xl hover:bg-gray-50 dark:hover:bg-[#333] transition-all duration-300 hover:scale-105 text-xs md:text-xs lg:text-xs text-gray-900 dark:text-white cursor-pointer"
+                >
+                  <Briefcase size={18} />
+                  <span>View <span class="italic">Resume</span></span>
                   <ChevronRight size={16} />
                 </button>
                 <button 
@@ -745,7 +752,7 @@ const workshops = [
       {!isChatOpen && (
         <button
           onClick={() => setIsChatOpen(true)}
-          className="fixed bottom-4 right-4 z-40 flex animate-bounce items-center justify-center rounded-full bg-blue-600 text-white font-semibold shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:ring-offset-gray-900 h-14 w-14 md:h-auto md:w-auto md:px-4 md:py-3 md:gap-2 md:bottom-6 md:right-6"
+          className="fixed bottom-4 right-4 z-40 flex animate-bounce items-center justify-center rounded-full bg-blue-600 text-white font-semibold shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:ring-offset-gray-900 h-14 w-14 md:h-auto md:w-auto md:px-4 md:py-3 md:gap-2 md:bottom-6 md:right-6 cursor-pointer"
           aria-label="Open AI Assistant"
         >
           <MessageSquare size={20} className="md:shrink-0"/>
@@ -754,6 +761,11 @@ const workshops = [
       )}
 
       {isChatOpen && <Chat onClose={() => setIsChatOpen(false)} />}
+      <OpenCv 
+        isOpen={isCvModalOpen} 
+        onClose={() => setIsCvModalOpen(false)} 
+        triggerRef={cvButtonRef}
+      />
     </div>
   )
 }

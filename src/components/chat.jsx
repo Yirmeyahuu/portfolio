@@ -119,7 +119,7 @@ const Chat = ({ onClose }) => {
 
 
   return (
-    <div className="fixed inset-0 md:inset-auto md:bottom-6 md:right-6 md:w-96 md:h-[600px] bg-white dark:bg-[#1a1a1a] md:rounded-2xl shadow-2xl flex flex-col md:border border-gray-200 dark:border-gray-700 z-50 transition-all duration-300 ease-in-out">
+    <div className="fixed inset-0 md:inset-auto md:bottom-4 md:right-4 md:w-80 md:h-[500px] bg-white dark:bg-[#1a1a1a] md:rounded-2xl shadow-2xl flex flex-col md:border border-gray-200 dark:border-gray-700 z-50 transition-all duration-300 ease-in-out">
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700 flex-shrink-0">
         <div className="flex items-center gap-3">
@@ -137,7 +137,7 @@ const Chat = ({ onClose }) => {
             <p className="text-xs text-gray-500 dark:text-gray-400">Online</p>
           </div>
         </div>
-        <button onClick={onClose} className="p-2 text-gray-500 hover:text-gray-900 dark:hover:text-white rounded-full hover:bg-gray-100 dark:hover:bg-[#2a2a2a] transition-colors">
+        <button onClick={onClose} className="p-2 text-gray-500 hover:text-gray-900 dark:hover:text-white rounded-full hover:bg-gray-100 dark:hover:bg-[#2a2a2a] transition-colors cursor-pointer">
           <X size={20} />
         </button>
       </div>
@@ -149,7 +149,7 @@ const Chat = ({ onClose }) => {
             {msg.sender === 'bot' && (
               <img src="/profile.png" alt="Bot Avatar" className="w-8 h-8 rounded-full object-cover flex-shrink-0" />
             )}
-            <div className={`max-w-[75%] px-4 py-2 rounded-2xl ${msg.sender === 'user' ? 'bg-blue-600 text-white rounded-br-none' : 'bg-gray-100 dark:bg-[#2a2a2a] text-gray-900 dark:text-white rounded-bl-none'}`}>
+            <div className={`max-w-[75%] px-4 py-2 rounded-2xl text-sm ${msg.sender === 'user' ? 'bg-blue-600 text-white rounded-br-none' : 'bg-gray-100 dark:bg-[#2a2a2a] text-gray-900 dark:text-white rounded-bl-none'}`}>
               <ReactMarkdown>{msg.text}</ReactMarkdown>
             </div>
              {msg.sender === 'user' && (
