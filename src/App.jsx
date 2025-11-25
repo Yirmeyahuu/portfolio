@@ -8,6 +8,7 @@ import Certifications from './pages/Certifications';
 import Experience from './pages/Experience';
 import Workshop from './pages/Workshop';
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -42,6 +43,7 @@ function App() {
           <Route path="/workshops" element={<Workshop />} />
         </Routes>
         <Analytics />
+        <SpeedInsights />
       </div>
     </Router>
   );
