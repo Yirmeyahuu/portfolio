@@ -16,14 +16,17 @@ import {
   ChevronRight,
   Moon,
   Sun,
+  MessageSquare
 } from 'lucide-react'
 import Preloader from '../Preloader';
+import Chat from '../chat';
 
 export default function MainSection() {
   const [activeTab, setActiveTab] = useState('about')
   const [darkMode, setDarkMode] = useState(true)
   const [loading, setLoading] = useState(true);
   const [isVisible, setIsVisible] = useState(false);
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -140,7 +143,7 @@ export default function MainSection() {
 
   // Tech Stack
   const techStack = {
-    frontend: ['JavaScript', 'TypeScript', 'React', 'Next.js', 'Vue.js', 'Tailwind CSS'],
+    frontend: ['JavaScript', 'TypeScript', 'React', 'Next.js', 'Vue.js', 'Tailwind CSS', 'GSAP'],
     backend: ['Node.js', 'Python', 'Django'],
     database: ['PostgreSQL', 'MongoDB', 'MySQL', 'Firebase'],
     tools: ['Git', 'Bitbucket', 'Docker', 'AWS', 'Firebase', 'Vercel', 'Render']
@@ -737,6 +740,20 @@ const workshops = [
           </div>
         </footer>
       </div>
+
+      {/* Floating Chat Button & Chat Window */}
+      {!isChatOpen && (
+        <button
+          onClick={() => setIsChatOpen(true)}
+          className="fixed bottom-4 right-4 z-40 flex animate-bounce items-center justify-center rounded-full bg-blue-600 text-white font-semibold shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:ring-offset-gray-900 h-14 w-14 md:h-auto md:w-auto md:px-4 md:py-3 md:gap-2 md:bottom-6 md:right-6"
+          aria-label="Open AI Assistant"
+        >
+          <MessageSquare size={20} className="md:shrink-0"/>
+          <span className="hidden md:inline">Chat with Jeremiah</span>
+        </button>
+      )}
+
+      {isChatOpen && <Chat onClose={() => setIsChatOpen(false)} />}
     </div>
   )
 }
