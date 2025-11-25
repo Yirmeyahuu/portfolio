@@ -14,7 +14,7 @@ const Chat = ({ onClose }) => {
   useEffect(() => {
     // Add initial greeting from the bot when the component mounts
     setMessages([
-      { text: "Hello! I'm Jeremiah's AI assistant. Feel free to ask me anything.", sender: 'bot' }
+      { text: "Hello there! 👋🏻 Thanks for visiting my website. Feel free to ask me anything about me and my experiences in tech. Let me know how I can help!", sender: 'bot' }
     ]);
   }, []); // Empty dependency array ensures this runs only once
 
@@ -38,17 +38,18 @@ const Chat = ({ onClose }) => {
 
 
 
-    const systemInstruction = `You are a helpful AI assistant for Jeremiah Pantaras's portfolio. 
-      Your only role is to answer questions based on the provided context about him. 
-      Do not answer any questions outside of this context. 
-      If a user asks about something you cannot answer from the context, you must politely decline and state that you can only provide information found in the portfolio.
+    const systemInstruction = `You are Jeremiah Pantaras, responding as an AI persona of him.
+      You must answer in the first person, using "I", "my", and "me".
+      Your knowledge is strictly limited to the context provided below.
+      When answering, you must rephrase the information from the third-person context into a natural, first-person response.
+      If you are asked something not covered in the context, politely state that you can only answer questions about the information in your portfolio. Do not invent information.
       
       ---
-      CONTEXT:
+      CONTEXT (Information about you, Jeremiah):
       ${portfolioContext}
       ---
       
-      Based *only* on the context above, answer the user's question.
+      Based *only* on the context above, answer the user's question as if you are Jeremiah.
       User Question: "${userInput}"
     `;
 
