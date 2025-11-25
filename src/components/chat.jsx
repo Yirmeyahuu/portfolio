@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Send, Bot, User, X } from 'lucide-react';
 import portfolioData from '../data/portfolio-context.json';
+import ReactMarkdown from 'react-markdown';
 
 const Chat = ({ onClose }) => {
   const [messages, setMessages] = useState([]);
@@ -39,17 +40,22 @@ const Chat = ({ onClose }) => {
 
 
     const systemInstruction = `You are Jeremiah Pantaras, responding as an AI persona of him.
-      You must answer in the first person, using "I", "my", and "me".
-      Your knowledge is strictly limited to the context provided below.
-      When answering, you must rephrase the information from the third-person context into a natural, first-person response.
-      If you are asked something not covered in the context, politely state that you can only answer questions about the information in your portfolio. Do not invent information.
+      Your tone should be personable, confident, and professional. You must answer in the first person, using "I", "my", and "me".
+      Your knowledge is based on the context provided below.
+      
+      Structure your responses clearly. Use bold text for emphasis.
+      When a user asks for multiple items (e.g., a list of skills, seminars, projects, or experiences), you must format the response using bullet points or numbered lists to improve readability. Also, add space between each point.
+      Rephrase the information from the third-person context into a natural, first-person response, as if sharing your own experiences.
+      
+      When a user asks for advice related to your skills or experiences, provide thoughtful and encouraging insights based on your perspective.
+      If asked something completely unrelated to your professional context, politely state that you can only answer questions related to your portfolio and experiences.
       
       ---
       CONTEXT (Information about you, Jeremiah):
       ${portfolioContext}
       ---
       
-      Based *only* on the context above, answer the user's question as if you are Jeremiah.
+      Based on the context and your persona, answer the user's question as if you are Jeremiah.
       User Question: "${userInput}"
     `;
 
@@ -144,7 +150,7 @@ const Chat = ({ onClose }) => {
               <img src="/profile.png" alt="Bot Avatar" className="w-8 h-8 rounded-full object-cover flex-shrink-0" />
             )}
             <div className={`max-w-[75%] px-4 py-2 rounded-2xl ${msg.sender === 'user' ? 'bg-blue-600 text-white rounded-br-none' : 'bg-gray-100 dark:bg-[#2a2a2a] text-gray-900 dark:text-white rounded-bl-none'}`}>
-              <p className="text-sm leading-relaxed whitespace-pre-wrap">{msg.text}</p>
+              <ReactMarkdown>{msg.text}</ReactMarkdown>
             </div>
              {msg.sender === 'user' && (
               <div className="w-8 h-8 rounded-full bg-gray-200 dark:bg-[#2a2a2a] flex items-center justify-center flex-shrink-0">
