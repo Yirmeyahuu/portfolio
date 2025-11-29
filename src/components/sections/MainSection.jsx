@@ -33,16 +33,15 @@ export default function MainSection() {
   const cvButtonRef = useRef(null);
 
   useEffect(() => {
-    // Check sessionStorage to see if this is the first visit in the session.
     if (!sessionStorage.getItem('preloaderShown')) {
-      setIsInitialLoad(true); // If it's the first visit, set our state.
+      setIsInitialLoad(true);
       sessionStorage.setItem('preloaderShown', 'true');
     }
 
     const timer = setTimeout(() => {
       setLoading(false);
       setTimeout(() => setIsVisible(true), 50);
-    }, 3500);
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, []);
