@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Preloader from '../components/Preloader';
+import SkeletonLoader from '../components/SkeletonLoader';
 import { User, Sparkles, Heart, Code, BookOpen, ChevronLeft } from 'lucide-react';
 
 export default function About() {
@@ -40,7 +40,7 @@ export default function About() {
     }
   ];
 
-  if (loading) return <Preloader />;
+  if (loading) return <SkeletonLoader />;
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#0a0a0a] transition-colors duration-300 py-12">

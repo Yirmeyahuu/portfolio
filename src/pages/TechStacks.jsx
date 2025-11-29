@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Code, ChevronLeft } from 'lucide-react';
-import Preloader from '../components/Preloader';
+import SkeletonLoader from '../components/SkeletonLoader';
 
 export default function TechStacks() {
   const navigate = useNavigate();
@@ -37,7 +37,7 @@ export default function TechStacks() {
     ]
   };
 
-  if (loading) return <Preloader />;
+  if (loading) return <SkeletonLoader />;
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#0a0a0a] transition-colors duration-300 py-12">

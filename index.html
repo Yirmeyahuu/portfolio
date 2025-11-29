@@ -4,6 +4,20 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/poypoyrelicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jeremiah Pantaras | Software Engineer</title>
+
+    <!-- Theme Initialization Script -->
+    <script>
+      (function() {
+        const theme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (theme === 'dark' || (!theme && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
     
     <!-- SEO Meta Tags -->
     <title>Jeremiah Pantaras | Software Engineer</title>

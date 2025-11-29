@@ -17,26 +17,33 @@ import {
   Moon,
   Sun,
   MessageSquare
-} from 'lucide-react'
+} from 'lucide-react';
+import MainSkeletonLoader from '../MainSkeletonLoader';
 import Preloader from '../Preloader';
 import Chat from '../chat';
 import OpenCv from '../OpenCv';
 
 export default function MainSection() {
-  const [activeTab, setActiveTab] = useState('about')
   const [darkMode, setDarkMode] = useState(true)
   const [loading, setLoading] = useState(true);
+  const [isInitialLoad, setIsInitialLoad] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [isCvModalOpen, setIsCvModalOpen] = useState(false);
   const cvButtonRef = useRef(null);
 
   useEffect(() => {
+    // Check sessionStorage to see if this is the first visit in the session.
+    if (!sessionStorage.getItem('preloaderShown')) {
+      setIsInitialLoad(true); // If it's the first visit, set our state.
+      sessionStorage.setItem('preloaderShown', 'true');
+    }
+
     const timer = setTimeout(() => {
       setLoading(false);
-      // Trigger animation after preloader
       setTimeout(() => setIsVisible(true), 50);
-    }, 1500);
+    }, 3500);
+
     return () => clearTimeout(timer);
   }, []);
 
@@ -196,7 +203,9 @@ const workshops = [
   }
 ]
 
-  if (loading) return <Preloader />;
+  if (loading) {
+    return isInitialLoad ? <Preloader /> : <MainSkeletonLoader />;
+  }
   
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-[#0a0a0a] transition-colors duration-300">
