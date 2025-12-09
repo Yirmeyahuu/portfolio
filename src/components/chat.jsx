@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Send, Bot, User, X } from 'lucide-react';
 import portfolioData from '../data/portfolio-context.json';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 const Chat = ({ onClose }) => {
   const [messages, setMessages] = useState([]);
@@ -37,14 +38,18 @@ const Chat = ({ onClose }) => {
     setIsLoading(true);
     const portfolioContext = portfolioData.context.join('\n');
 
-
-
     const systemInstruction = `You are Jeremiah Pantaras, responding as an AI persona of him.
       Your tone should be personable, confident, and professional. You must answer in the first person, using "I", "my", and "me".
       Your knowledge is based on the context provided below.
       
-      Structure your responses clearly. Use bold text for emphasis.
-      When a user asks for multiple items (e.g., a list of skills, seminars, projects, or experiences), you must format the response using bullet points or numbered lists to improve readability. Also, add space between each point.
+      Structure your responses clearly using Markdown formatting:
+      - Use **bold** for emphasis on important points
+      - Use proper headings (## for sections) when organizing multiple topics
+      - Use bullet points (-) or numbered lists (1.) for lists
+      - Use line breaks to separate paragraphs for better readability
+      - Use \`code\` formatting for technical terms or technologies
+      
+      When a user asks for multiple items (e.g., a list of skills, seminars, projects, or experiences), format the response as a well-structured list with clear spacing.
       Rephrase the information from the third-person context into a natural, first-person response, as if sharing your own experiences.
       
       When a user asks for advice related to your skills or experiences, provide thoughtful and encouraging insights based on your perspective.
@@ -59,11 +64,10 @@ const Chat = ({ onClose }) => {
       User Question: "${userInput}"
     `;
 
-
     try {
       // Call Gemini API
       const response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`,
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`,
         {
           method: 'POST',
           headers: {
@@ -117,22 +121,103 @@ const Chat = ({ onClose }) => {
     }
   };
 
+  // Custom components for ReactMarkdown to style the output
+  const markdownComponents = {
+    // Paragraphs
+    p: ({ children }) => (
+      <p className="mb-3 last:mb-0 leading-relaxed">{children}</p>
+    ),
+    // Headings
+    h1: ({ children }) => (
+      <h1 className="text-lg font-bold mb-2 mt-4 first:mt-0">{children}</h1>
+    ),
+    h2: ({ children }) => (
+      <h2 className="text-md font-bold mb-2 mt-3 first:mt-0">{children}</h2>
+    ),
+    h3: ({ children }) => (
+      <h3 className="text-sm font-bold mb-2 mt-3 first:mt-0">{children}</h3>
+    ),
+    // Unordered lists
+    ul: ({ children }) => (
+      <ul className="list-disc list-inside mb-3 space-y-1.5 ml-2">{children}</ul>
+    ),
+    // Ordered lists
+    ol: ({ children }) => (
+      <ol className="list-decimal list-inside mb-3 space-y-1.5 ml-2">{children}</ol>
+    ),
+    // List items
+    li: ({ children }) => (
+      <li className="leading-relaxed">{children}</li>
+    ),
+    // Strong/Bold
+    strong: ({ children }) => (
+      <strong className="font-bold text-gray-900 dark:text-white">{children}</strong>
+    ),
+    // Emphasis/Italic
+    em: ({ children }) => (
+      <em className="italic">{children}</em>
+    ),
+    // Code inline
+    code: ({ inline, children }) => (
+      inline ? (
+        <code className="px-1.5 py-0.5 bg-gray-200 dark:bg-[#3a3a3a] rounded text-xs font-mono">
+          {children}
+        </code>
+      ) : (
+        <code className="block px-3 py-2 bg-gray-200 dark:bg-[#3a3a3a] rounded text-xs font-mono overflow-x-auto my-2">
+          {children}
+        </code>
+      )
+    ),
+    // Blockquote
+    blockquote: ({ children }) => (
+      <blockquote className="border-l-4 border-blue-500 pl-3 py-1 my-2 italic text-gray-700 dark:text-gray-300">
+        {children}
+      </blockquote>
+    ),
+    // Links
+    a: ({ href, children }) => (
+      <a 
+        href={href} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="text-blue-600 dark:text-blue-400 hover:underline"
+      >
+        {children}
+      </a>
+    ),
+  };
 
   return (
-    <div className="fixed inset-0 md:inset-auto md:bottom-4 md:right-4 md:w-80 md:h-[500px] bg-white dark:bg-[#1a1a1a] md:rounded-2xl shadow-2xl flex flex-col md:border border-gray-200 dark:border-gray-700 z-50 transition-all duration-300 ease-in-out">
+    <div className="fixed inset-0 md:inset-auto md:bottom-4 md:right-4 md:w-96 md:h-[550px] bg-white dark:bg-[#1a1a1a] md:rounded-2xl shadow-2xl flex flex-col md:border border-gray-200 dark:border-gray-700 z-50 transition-all duration-300 ease-in-out">
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700 flex-shrink-0">
         <div className="flex items-center gap-3">
           <div className="relative">
-            <img src="/profile.png" alt="null" className="w-10 h-10 rounded-full object-cover" />
+            <img src="/profile.png" alt="Jeremiah Pantaras" className="w-10 h-10 rounded-full object-cover" />
             <span className="absolute bottom-0 right-0 block h-2.5 w-2.5 rounded-full bg-green-500 border-2 border-white dark:border-[#1a1a1a]"></span>
           </div>
           <div>
             <h2 className="font-bold text-md text-gray-900 dark:text-white flex items-center gap-1">
-              Jeremiah P. Pantaras
-              <svg className="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-              </svg>
+              Jeremiah Pantaras
+              <span className="inline-flex items-center justify-center w-4 h-4 relative">
+                <svg 
+                  viewBox="0 0 24 24" 
+                  className="w-4 h-4 absolute"
+                >
+                  <path 
+                    d="M12 2L14.5 8.5L21.5 9.5L16.5 14.5L18 21.5L12 18L6 21.5L7.5 14.5L2.5 9.5L9.5 8.5L12 2Z" 
+                    fill="#3B82F6"
+                  />
+                </svg>
+                <svg 
+                  viewBox="0 0 24 24" 
+                  fill="white" 
+                  className="w-2 h-2 relative z-10"
+                >
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                </svg>
+              </span>
             </h2>
             <p className="text-xs text-gray-500 dark:text-gray-400">Online</p>
           </div>
@@ -149,8 +234,17 @@ const Chat = ({ onClose }) => {
             {msg.sender === 'bot' && (
               <img src="/profile.png" alt="Bot Avatar" className="w-8 h-8 rounded-full object-cover flex-shrink-0" />
             )}
-            <div className={`max-w-[75%] px-4 py-2 rounded-2xl text-sm ${msg.sender === 'user' ? 'bg-blue-600 text-white rounded-br-none' : 'bg-gray-100 dark:bg-[#2a2a2a] text-gray-900 dark:text-white rounded-bl-none'}`}>
-              <ReactMarkdown>{msg.text}</ReactMarkdown>
+            <div className={`max-w-[85%] px-4 py-3 rounded-2xl text-sm ${
+              msg.sender === 'user' 
+                ? 'bg-blue-600 text-white rounded-br-none' 
+                : 'bg-gray-100 dark:bg-[#2a2a2a] text-gray-900 dark:text-white rounded-bl-none'
+            }`}>
+              <ReactMarkdown 
+                remarkPlugins={[remarkGfm]} 
+                components={markdownComponents}
+              >
+                {msg.text}
+              </ReactMarkdown>
             </div>
              {msg.sender === 'user' && (
               <div className="w-8 h-8 rounded-full bg-gray-200 dark:bg-[#2a2a2a] flex items-center justify-center flex-shrink-0">

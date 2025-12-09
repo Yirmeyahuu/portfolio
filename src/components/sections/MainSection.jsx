@@ -16,7 +16,10 @@ import {
   ChevronRight,
   Moon,
   Sun,
-  MessageSquare
+  MessageSquare,
+  Medal,
+  ChevronDown,
+  ChevronUp
 } from 'lucide-react';
 import MainSkeletonLoader from '../MainSkeletonLoader';
 import Preloader from '../Preloader';
@@ -299,7 +302,7 @@ const workshops = [
                   className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-[#2a2a2a] border border-gray-300 dark:border-gray-700 rounded-xl hover:bg-gray-50 dark:hover:bg-[#333] transition-all duration-300 hover:scale-105 text-xs md:text-xs lg:text-xs text-gray-900 dark:text-white cursor-pointer"
                 >
                   <Briefcase size={18} />
-                  <span>View <span class="italic">Resume</span></span>
+                  <span>View <span className="italic">Resume</span></span>
                   <ChevronRight size={16} />
                 </button>
                 <button 
@@ -309,6 +312,19 @@ const workshops = [
                   <Mail size={18} />
                   <span>Send Email</span>
                 </button>
+                
+                {/* Achievement Badge */}
+                <a 
+                  href="https://portal.connectingasia.org/conference/schedule/aic?_gl=1*tctq5t*_gcl_au*MTY4NTUzNzc5NS4xNzYzNTU4NTg4*_ga*MTE0Mjk2NzQ4My4xNzYzNTU4NTg4*_ga_VGQ86S5R1H*czE3NjUyODYwNjkkbzMkZzAkdDE3NjUyODYwNjkkajYwJGwwJGgw&_ga=2.32719870.1781276684.1765286072-1142967483.1763558588"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-xl shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer w-full sm:w-auto"
+                >
+                  <Medal size={16} className="flex-shrink-0" />
+                  <span className="text-xs font-semibold sm:whitespace-nowrap">
+                    Presented in the 11th Asia International Conference 2025
+                  </span>
+                </a>
               </div>
 
               {/* Social Links */}
@@ -613,7 +629,7 @@ const workshops = [
                 <div className="p-2 bg-gray-100 dark:bg-[#2a2a2a] rounded-lg">
                   <Award size={20} className="text-gray-700 dark:text-gray-300" />
                 </div>
-                <h2 className="text-md sm:text-md font-bold text-gray-900 dark:text-white">Seminars & Workshops</h2>
+                <h2 className="text-md sm:text-md font-bold text-gray-900 dark:text-white">Seminars | Workshops</h2>
                 {/* View all Workshops link */}
                 <a
                   href="/workshops"
