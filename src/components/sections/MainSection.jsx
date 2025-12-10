@@ -89,7 +89,7 @@ export default function MainSection() {
     location: 'Bacolod City, Negros Occidental, Philippines',
     email: 'jeremiahpantaras@gmail.com',
     avatar: '/poypoy.png',
-    bio: "I'm a Junior Software Engineer, eager to learn and grow in the field. I specialize in Python (Django) and React (Vite), focusing on building modern web applications, mobile apps, and contributing to digital marketing efforts.",
+    bio: "I'm an aspiring Software Engineer, eager to learn and grow in the field. I specialize in Python (Django) and React (Vite), focusing on building modern web applications, mobile apps, and contributing to digital marketing efforts.",
     bio2: "Currently, I'm helping startups and MSMEs grow with my company, COS Devs. Beyond building systems, my goal is to foster a community for all developers in Negros Island, centered on sharing knowledge and providing mentorship.",
     bio3: "I've recently been diving deep into the world of artificial intelligence, fascinated by its potential. I'm actively learning to integrate AI tools and techniques into modern applications, focusing on developing AI-powered solutions, creating intelligent apps, and using generative AI to optimize workflows and deliver cutting-edge technology."
   }
