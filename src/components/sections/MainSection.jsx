@@ -302,7 +302,7 @@ const workshops = [
                   className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-[#2a2a2a] border border-gray-300 dark:border-gray-700 rounded-xl hover:bg-gray-50 dark:hover:bg-[#333] transition-all duration-300 hover:scale-105 text-xs md:text-xs lg:text-xs text-gray-900 dark:text-white cursor-pointer"
                 >
                   <Briefcase size={18} />
-                  <span>View <span className="italic">Resume</span></span>
+                  <span>View <span className="italic">Curriculum Vitae</span></span>
                   <ChevronRight size={16} />
                 </button>
                 <button 
