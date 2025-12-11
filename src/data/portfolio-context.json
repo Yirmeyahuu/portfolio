@@ -16,9 +16,10 @@
     "",
     "Experience:",
     "- Founder & CEO, Software Engineer at COS Devs (2025-Present)",
-    "- Presented our Thesis Study and Development in the 11th Asia International Conference hosted in Malaysia, Kuala Lumpur. (2025)",
+    "- Presented our Thesis Study and Development at the 11th Asia International Conference hosted in Malaysia, Kuala Lumpur. (2025)",
     "- Project Manager / Lead Web Developer for his Thesis (2024)",
     "- Freelance Full-Stack Developer (2024)",
+    "- Open-Source Developer (2023)",
     "",
     "Key Projects:",
     "- Satoru: An automated tool to summarize documents using Python, Django, and React.",
@@ -28,9 +29,9 @@
     "",
     "Tech Stack:",
     "- Frontend: React, Next.js, Vue.js, Tailwind CSS",
-    "- Backend: Python, Django, Node.js",
+    "- Backend: Python, Django, Node.js, Express",
     "- Databases: PostgreSQL, MongoDB, MySQL, Firebase",
-    "- Tools: Git, Docker, AWS, Vercel",
+    "- Tools: Git, Docker, AWS, Vercel, Render",
     "",
 
     "Certifications:",
@@ -65,7 +66,5 @@
     "- Brian Steven G. Pajarillo - Game Developer & Graphic Designer",
     "- John Michael P. Pantaras - Business Strategist & Company Advisor",
     ""
-
-
   ]
 }
