@@ -21,13 +21,13 @@ export default function TechStacks() {
       'JavaScript', 'TypeScript', 'React', 'Next.js', 'Vue.js', 'Tailwind CSS', 'HTML5', 'CSS3', 'Sass', 'Redux', 'Vite'
     ],
     backend: [
-      'Node.js', 'Python', 'Django', 'Express.js', 'REST API', 'GraphQL'
+      'Node.js', 'Python', 'PHP', 'Django', 'Express.js', 'REST API', 'GraphQL'
     ],
     database: [
       'PostgreSQL', 'MongoDB', 'MySQL', 'Firebase', 'SQLite'
     ],
     tools: [
-      'Git', 'Bitbucket', 'Docker', 'AWS', 'Firebase', 'Vercel', 'Render', 'Postman', 'Jira', 'Trello', 'Notion'
+      'Git', 'Bitbucket', 'Docker', 'AWS', 'Firebase', 'Vercel', 'Render', 'Postman', 'Jira', 'Trello', 'Notion', 'N8N', 'Atlassian Suite'
     ],
     uiux: [
       'Figma', 'Adobe XD'
