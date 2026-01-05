@@ -100,7 +100,7 @@ export default function MainSection() {
     { icon: Linkedin, url: 'https://www.linkedin.com/in/jeremiah-pantaras-47092b368/', label: 'LinkedIn' },
     { icon: Facebook, url: 'https://www.facebook.com/https.poypoymignon', label: 'Facebook' },
     { icon: Instagram, url: 'https://www.instagram.com/poypoy.div/', label: 'Instagram' },
-    { icon: Globe, url: 'https://cosdevsph.vercel.app/', label: 'Website' },
+    { icon: Globe, url: 'https://www.cosedevs.com/', label: 'Website' },
   ]
 
   // Experience
@@ -390,7 +390,7 @@ const workshops = [
                 Leading a team of passionate developers building innovative solutions for startups and MSMEs
               </p>
               <a 
-                href="https://cosdevsph.vercel.app/" 
+                href="https://www.cosedevs.com/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm text-sky-600 hover:text-sky-700 dark:text-sky-400 dark:hover:text-sky-300 font-medium transition-colors"
@@ -748,7 +748,7 @@ const workshops = [
                 </li>
                 <li className="flex items-center gap-2">
                   <Globe size={16} className="text-gray-600 dark:text-gray-400 flex-shrink-0" />
-                  <a href="https://cosdevsph.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
+                  <a href="https://www.cosedevs.com/" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
                     COS Devs
                   </a>
                 </li>
