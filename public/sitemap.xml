@@ -2,47 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://jeremiahpantaras.vercel.app/</loc>
+    <loc>https://jeremiah.cosedevs.com/</loc>
     <lastmod>2025-12-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
     <image:image>
-      <image:loc>https://jeremiahpantaras.vercel.app/portfolioThumbnail.png</image:loc>
+      <image:loc>https://jeremiah.cosedevs.com/portfolioThumbnail.png</image:loc>
       <image:title>Jeremiah Pantaras Portfolio</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://jeremiahpantaras.vercel.app/about</loc>
+    <loc>https://jeremiah.cosedevs.com/about</loc>
     <lastmod>2025-12-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://jeremiahpantaras.vercel.app/tech-stacks</loc>
+    <loc>https://jeremiah.cosedevs.com/tech-stacks</loc>
     <lastmod>2025-12-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://jeremiahpantaras.vercel.app/projects</loc>
+    <loc>https://jeremiah.cosedevs.com/projects</loc>
     <lastmod>2025-12-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://jeremiahpantaras.vercel.app/certifications</loc>
+    <loc>https://jeremiah.cosedevs.com/certifications</loc>
     <lastmod>2025-12-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://jeremiahpantaras.vercel.app/experience</loc>
+    <loc>https://jeremiah.cosedevs.com/experience</loc>
     <lastmod>2025-12-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://jeremiahpantaras.vercel.app/workshops</loc>
+    <loc>https://jeremiah.cosedevs.com/workshops</loc>
     <lastmod>2025-12-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>

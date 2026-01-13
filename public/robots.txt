@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Point search engines to the sitemap.
-Sitemap: https://jeremiahpantaras.vercel.app/sitemap.xml
+Sitemap: https://jeremiah.cosedevs.com/sitemap.xml
