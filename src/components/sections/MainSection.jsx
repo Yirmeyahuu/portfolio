@@ -245,31 +245,12 @@ const workshops = [
           <div className="flex flex-col sm:flex-row items-start gap-6">
             {/* Avatar */}
             <div className="flex-shrink-0">
-              <div className="relative w-24 h-24 sm:w-36 sm:h-36">
-                {/* Orange gradient container with floating particles */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-sky-400 to-sky-700 border-4 border-white dark:border-white shadow-xl overflow-hidden">
-                  {/* Floating particles */}
-                  <div className="absolute w-4 h-4 bg-white/50 rounded-full animate-float-1" style={{top: '20%', left: '15%'}} />
-                  <div className="absolute w-3 h-3 bg-white/50 rounded-full animate-float-2" style={{top: '60%', left: '70%'}} />
-                  <div className="absolute w-5.5 h-5.5 bg-white/60 rounded-full animate-float-3" style={{top: '40%', left: '80%'}} />
-                  <div className="absolute w-4.5 h-4.5 bg-white/55 rounded-full animate-float-4" style={{top: '75%', left: '25%'}} />
-                  <div className="absolute w-2 h-2 bg-white/75 rounded-full animate-float-5" style={{top: '30%', left: '50%'}} />
-                </div>
-                
-                {/* Image overlapping the container */}
-                <div className="absolute -inset-2 flex items-center justify-center mt-12 cursor-ns-resize">
-                  {profile.avatar ? (
-                    <img 
-                      src={profile.avatar} 
-                      alt={profile.name} 
-                      className="w-44 h-44 sm:w-64 sm:h-64 object-cover mb-16" 
-                    />
-                  ) : (
-                    <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-2xl flex items-center justify-center text-2xl sm:text-3xl font-bold text-white">
-                      {profile.name.charAt(0)}
-                    </div>
-                  )}
-                </div>
+              <div className="w-24 h-24 sm:w-36 sm:h-36 rounded-2xl overflow-hidden border-2 border-gray-200 dark:border-gray-700 shadow-xl transition-all duration-300">
+                <img
+                  src={darkMode ? '/profile/darkMode.webp' : '/profile/lightMode.webp'}
+                  alt={profile.name}
+                  className="w-full h-full object-cover transition-opacity duration-300"
+                />
               </div>
             </div>
 

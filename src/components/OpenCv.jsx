@@ -24,7 +24,7 @@ const OpenCv = ({ isOpen, onClose }) => {
 
   if (!isOpen) return null;
 
-  const cvPath = '/Pantaras-CV.pdf'; 
+  const cvPath = '/Pantaras-portfolio.pdf'; 
 
   const handlePrint = () => {
     const iframe = document.getElementById('cv-iframe');
