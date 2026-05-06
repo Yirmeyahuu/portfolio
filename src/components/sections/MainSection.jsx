@@ -360,7 +360,7 @@ const workshops = [
             <div className="flex-1 text-center sm:text-left">
               <div className="flex items-center justify-center sm:justify-start gap-2 mb-1">
                 <h3 className="text-md sm:text-lg font-bold text-gray-900 dark:text-white">
-                  Founder & Lead Project Manager
+                  Founder & CEO
                 </h3>
                 <span className="text-gray-800 dark:text-gray-400">•</span>
                 <span className="text-lg sm:text-xl font-bold bg-gradient-to-r from-sky-500 to-sky-600 bg-clip-text text-transparent">
