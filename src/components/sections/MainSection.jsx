@@ -341,7 +341,7 @@ const workshops = [
               <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl flex items-center justify-center overflow-hidden shadow-lg ">
                 {/* Replace with actual logo image if available */}
                 <img 
-                  src="/COSDEVSLOGOrelicon.png"  
+                  src="/COSDevsLogo2026.svg"  
                   alt="COS Devs" 
                   className="w-full h-full object-cover"
                   onError={(e) => {
