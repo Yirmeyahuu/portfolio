@@ -88,7 +88,7 @@ export default function Workshop() {
             {workshops.map((workshop, index) => (
               <div
                 key={index}
-                className={`p-4 bg-gray-50 dark:bg-[#2a2a2a] border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 transition-all duration-500 hover:scale-[1.02] hover:shadow-lg ${
+                className={`p-4 bg-gray-50 dark:bg-[#2a2a2a] border border-gray-200 dark:border-gray-700 hover:border-slate-500 dark:hover:border-slate-400 transition-all duration-500 hover:scale-[1.02] hover:shadow-lg ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}

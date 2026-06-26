@@ -141,13 +141,13 @@ export default function Projects() {
             {projects.map((project, idx) => (
               <div
                 key={idx}
-                className={`flex flex-col h-full p-4 bg-gray-50 dark:bg-[#2a2a2a] border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 transition-all duration-500 group hover:scale-[1.02] hover:shadow-lg ${
+                className={`flex flex-col h-full p-4 bg-gray-50 dark:bg-[#2a2a2a] border border-gray-200 dark:border-gray-700 hover:border-slate-500 dark:hover:border-slate-400 transition-all duration-500 group hover:scale-[1.02] hover:shadow-lg ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                 }`}
                 style={{ transitionDelay: `${idx * 100}ms` }}
               >
                 <div className="flex items-center justify-between mb-2">
-                  <h2 className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-blue-500 transition-colors">
+                  <h2 className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-slate-600 dark:group-hover:text-slate-400 transition-colors">
                     {project.title}
                   </h2>
                   {project.link && project.link !== '#' && (
@@ -155,7 +155,7 @@ export default function Projects() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sky-500 hover:text-sky-700 dark:text-sky-400 dark:hover:text-sky-300 transition-all duration-300 hover:scale-110"
+                      className="text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300 transition-all duration-300 hover:scale-110"
                       aria-label="Project Link"
                     >
                       <ExternalLink size={18} />
@@ -169,7 +169,7 @@ export default function Projects() {
                   {project.tags.map((tag, i) => (
                     <span
                       key={i}
-                      className="px-2.5 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-xs font-medium transition-all duration-300 hover:scale-105"
+                      className="px-2.5 py-1 bg-slate-200 dark:bg-slate-800/50 text-slate-800 dark:text-slate-300 text-xs font-medium transition-all duration-300 hover:scale-105"
                     >
                       {tag}
                     </span>

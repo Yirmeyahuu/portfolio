@@ -83,7 +83,7 @@ export default function Experience() {
               >
                 <div className={`absolute left-[-9px] top-0 w-4 h-4 border-2 transition-all duration-300 ${
                   exp.current 
-                    ? 'bg-blue-500 border-blue-500 animate-pulse' 
+                    ? 'bg-slate-400 border-slate-400 animate-pulse' 
                     : 'bg-gray-300 dark:bg-gray-600 border-gray-300 dark:border-gray-600'
                 }`} />
                 <div>

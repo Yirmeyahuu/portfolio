@@ -365,7 +365,7 @@ const workshops = [
                   href="https://portal.connectingasia.org/conference/schedule/aic?_gl=1*tctq5t*_gcl_au*MTY4NTUzNzc5NS4xNzYzNTU4NTg4*_ga*MTE0Mjk2NzQ4My4xNzYzNTU4NTg4*_ga_VGQ86S5R1H*czE3NjUyODYwNjkkbzMkZzAkdDE3NjUyODYwNjkkajYwJGwwJGgw&_ga=2.32719870.1781276684.1765286072-1142967483.1763558588"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-1.5 px-2 py-1.5 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer w-full text-center"
+                  className="flex items-center justify-center gap-1.5 px-2 py-1.5 bg-gradient-to-r from-slate-300 via-slate-100 to-slate-300 hover:from-slate-400 hover:via-slate-200 hover:to-slate-400 text-slate-900 shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer w-full text-center"
                 >
                   <Medal size={14} className="flex-shrink-0" />
                   <span className="text-[10px] leading-tight font-semibold">
@@ -434,7 +434,7 @@ const workshops = [
                   Co-Founder and Lead Project Manager
                 </h3>
                 <span className="hidden sm:inline text-gray-800 dark:text-gray-400">•</span>
-                <span className="text-base sm:text-xl font-bold bg-gradient-to-r from-sky-500 to-sky-600 bg-clip-text text-transparent mt-1 sm:mt-0">
+                <span className="text-base sm:text-xl font-bold bg-gradient-to-r from-slate-400 via-slate-200 to-slate-400 bg-clip-text text-transparent mt-1 sm:mt-0">
                   COS Devs
                 </span>
               </div>
@@ -445,7 +445,7 @@ const workshops = [
                 href="https://www.cosedevs.com/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-sky-600 hover:text-sky-700 dark:text-sky-400 dark:hover:text-sky-300 font-medium transition-colors"
+                className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300 font-medium transition-colors"
               >
                 Visit Website
                 <ChevronRight size={16} />
@@ -472,7 +472,7 @@ const workshops = [
                 {/* More about me link */}
                 <a
                   href="/about"
-                  className="ml-auto text-xs text-sky-600 dark:text-sky-400 hover:underline hover:text-sky-700 dark:hover:text-sky-300 font-semibold transition-colors underline"
+                  className="ml-auto text-xs text-slate-600 dark:text-slate-400 hover:underline hover:text-slate-700 dark:hover:text-slate-300 font-semibold transition-colors underline"
                   style={{ cursor: 'pointer' }}
                 >
                   More about me
@@ -498,7 +498,7 @@ const workshops = [
                 {/* View all link */}
                 <a
                   href="/tech-stacks"
-                  className="ml-auto text-xs text-sky-600 dark:text-sky-400 hover:underline hover:text-sky-700 dark:hover:text-sky-300 font-semibold transition-colors underline"
+                  className="ml-auto text-xs text-slate-600 dark:text-slate-400 hover:underline hover:text-slate-700 dark:hover:text-slate-300 font-semibold transition-colors underline"
                   style={{ cursor: 'pointer' }}
                 >
                   View all
@@ -539,7 +539,7 @@ const workshops = [
                 {/* View all projects link */}
                 <a
                   href="/projects"
-                  className="ml-auto text-xs text-sky-600 dark:text-sky-400 hover:underline hover:text-sky-700 dark:hover:text-sky-300 font-semibold transition-colors underline"
+                  className="ml-auto text-xs text-slate-600 dark:text-slate-400 hover:underline hover:text-slate-700 dark:hover:text-slate-300 font-semibold transition-colors underline"
                   style={{ cursor: 'pointer' }}
                 >
                   View all projects
@@ -550,9 +550,9 @@ const workshops = [
                 {projects.slice(0, 3).map((project, index) => (
                   <div
                     key={index}
-                    className="p-4 sm:p-6 bg-gray-50 dark:bg-[#2a2a2a] border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 transition-all duration-300 cursor-pointer group hover:scale-[1.02] hover:shadow-lg"
+                    className="p-4 sm:p-6 bg-gray-50 dark:bg-[#2a2a2a] border border-gray-200 dark:border-gray-700 hover:border-slate-500 dark:hover:border-slate-400 transition-all duration-300 cursor-pointer group hover:scale-[1.02] hover:shadow-lg"
                   >
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-500 transition-colors">
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-slate-600 dark:group-hover:text-slate-400 transition-colors">
                       {project.title}
                     </h3>
                     <p className="text-sm text-gray-600 dark:text-gray-400 mb-3 leading-relaxed">
@@ -562,7 +562,7 @@ const workshops = [
                       {project.tags.map((tag, i) => (
                         <span
                           key={i}
-                          className="px-2.5 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-xs font-medium transition-all duration-300 hover:scale-105"
+                          className="px-2.5 py-1 bg-slate-200 dark:bg-slate-800/50 text-slate-800 dark:text-slate-300 text-xs font-medium transition-all duration-300 hover:scale-105"
                         >
                           {tag}
                         </span>
@@ -590,7 +590,7 @@ const workshops = [
                 {/* View all experiences link */}
                 <a
                   href="/experience"
-                  className="ml-auto text-xs text-sky-600 dark:text-sky-400 hover:underline hover:text-sky-700 dark:hover:text-sky-300 font-semibold transition-colors underline"
+                  className="ml-auto text-xs text-slate-600 dark:text-slate-400 hover:underline hover:text-slate-700 dark:hover:text-slate-300 font-semibold transition-colors underline"
                   style={{ cursor: 'pointer' }}
                 >
                   View all
@@ -602,7 +602,7 @@ const workshops = [
                   <div key={index} className="relative pl-6 pb-6 border-l-2 border-gray-200 dark:border-gray-700 last:border-l-0 last:pb-0 transition-all duration-300 hover:translate-x-2">
                     <div className={`absolute left-[-9px] top-0 w-4 h-4 border-2 ${
                       exp.current 
-                        ? 'bg-blue-500 border-blue-500 animate-pulse' 
+                        ? 'bg-slate-400 border-slate-400 animate-pulse' 
                         : 'bg-gray-300 dark:bg-gray-600 border-gray-300 dark:border-gray-600'
                     }`} />
                     <div>
@@ -641,7 +641,7 @@ const workshops = [
                 {/* View all certifications link */}
                 <a
                   href="/certifications"
-                  className="ml-auto text-xs text-sky-600 dark:text-sky-400 hover:underline hover:text-sky-700 dark:hover:text-sky-300 font-semibold transition-colors underline"
+                  className="ml-auto text-xs text-slate-600 dark:text-slate-400 hover:underline hover:text-slate-700 dark:hover:text-slate-300 font-semibold transition-colors underline"
                   style={{ cursor: 'pointer' }}
                 >
                   View all
@@ -652,7 +652,7 @@ const workshops = [
                 {certifications.map((cert, index) => (
                   <div
                     key={index}
-                    className="p-4 bg-gray-50 dark:bg-[#2a2a2a] border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 transition-all duration-300 cursor-pointer hover:scale-[1.02] hover:shadow-lg"
+                    className="p-4 bg-gray-50 dark:bg-[#2a2a2a] border border-gray-200 dark:border-gray-700 hover:border-slate-500 dark:hover:border-slate-400 transition-all duration-300 cursor-pointer hover:scale-[1.02] hover:shadow-lg"
                   >
                     <div className="flex items-start gap-3">
                       <span className="text-2xl transition-transform duration-300 hover:scale-125">{cert.badge}</span>
@@ -685,7 +685,7 @@ const workshops = [
                 {/* View all Workshops link */}
                 <a
                   href="/workshops"
-                  className="ml-auto text-xs text-sky-600 dark:text-sky-400 hover:underline hover:text-sky-700 dark:hover:text-sky-300 font-semibold transition-colors underline"
+                  className="ml-auto text-xs text-slate-600 dark:text-slate-400 hover:underline hover:text-slate-700 dark:hover:text-slate-300 font-semibold transition-colors underline"
                   style={{ cursor: 'pointer' }}
                 >
                   View all
@@ -696,7 +696,7 @@ const workshops = [
                 {workshops.map((workshop, index) => (
                   <div
                     key={index}
-                    className="p-4 bg-gray-50 dark:bg-[#2a2a2a] border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 transition-all duration-300 cursor-pointer hover:scale-[1.02] hover:shadow-lg"
+                    className="p-4 bg-gray-50 dark:bg-[#2a2a2a] border border-gray-200 dark:border-gray-700 hover:border-slate-500 dark:hover:border-slate-400 transition-all duration-300 cursor-pointer hover:scale-[1.02] hover:shadow-lg"
                   >
                     <div className="flex items-start gap-3">
                       <span className="text-2xl transition-transform duration-300 hover:scale-125">{workshop.badge}</span>
@@ -734,7 +734,7 @@ const workshops = [
             </div>
             <a 
               href="/gallery" 
-              className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors group cursor-pointer"
+              className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors group cursor-pointer"
             >
               View all
               <ChevronRight size={16} className="transition-transform group-hover:translate-x-1" />
@@ -802,22 +802,22 @@ const workshops = [
               </h3>
               <ul className="space-y-2">
                 <li>
-                  <a href="/about" className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
+                  <a href="/about" className="text-sm text-gray-600 dark:text-gray-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
                     About
                   </a>
                 </li>
                 <li>
-                  <a href="/experience" className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
+                  <a href="/experience" className="text-sm text-gray-600 dark:text-gray-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
                     Experience
                   </a>
                 </li>
                 <li>
-                  <a href="/projects" className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
+                  <a href="/projects" className="text-sm text-gray-600 dark:text-gray-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
                     Projects
                   </a>
                 </li>
                 <li>
-                  <a href="/tech-stacks" className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
+                  <a href="/tech-stacks" className="text-sm text-gray-600 dark:text-gray-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
                     Tech Stack
                   </a>
                 </li>
@@ -838,13 +838,13 @@ const workshops = [
                 </li>
                 <li className="flex items-center gap-2">
                   <Mail size={16} className="text-gray-600 dark:text-gray-400 flex-shrink-0" />
-                  <a href="mailto:jeremiahpantaras@gmail.com" className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
+                  <a href="mailto:jeremiahpantaras@gmail.com" className="text-sm text-gray-600 dark:text-gray-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
                     jeremiahpantaras@gmail.com
                   </a>
                 </li>
                 <li className="flex items-center gap-2">
                   <Globe size={16} className="text-gray-600 dark:text-gray-400 flex-shrink-0" />
-                  <a href="https://www.cosedevs.com/" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
+                  <a href="https://www.cosedevs.com/" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-600 dark:text-gray-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
                     COS Devs
                   </a>
                 </li>
@@ -870,7 +870,7 @@ const workshops = [
       {!isChatOpen && (
         <button
           onClick={() => setIsChatOpen(true)}
-          className="fixed bottom-4 right-4 z-40 flex animate-bounce items-center justify-center bg-blue-600 text-white font-semibold shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:ring-offset-gray-900 h-14 w-14 md:h-auto md:w-auto md:px-4 md:py-3 md:gap-2 md:bottom-6 md:right-6 cursor-pointer"
+          className="fixed bottom-4 right-4 z-40 flex animate-bounce items-center justify-center bg-gradient-to-r from-slate-300 via-slate-100 to-slate-300 hover:from-slate-400 hover:via-slate-200 hover:to-slate-400 text-slate-900 font-semibold shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 dark:ring-offset-gray-900 h-14 w-14 md:h-auto md:w-auto md:px-4 md:py-3 md:gap-2 md:bottom-6 md:right-6 cursor-pointer"
           aria-label="Open AI Assistant"
         >
           <MessageSquare size={20} className="md:shrink-0"/>
