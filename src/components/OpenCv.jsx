@@ -24,7 +24,7 @@ const OpenCv = ({ isOpen, onClose }) => {
 
   if (!isOpen) return null;
 
-  const cvPath = '/Resume2.pdf'; 
+  const cvPath = '/Resume.pdf'; 
 
   const handlePrint = () => {
     const iframe = document.getElementById('cv-iframe');
