@@ -1,12 +1,12 @@
 const MainSkeletonLoader = () => {
   const SkeletonCard = ({ children, className = '' }) => (
-    <div className={`bg-white dark:bg-[#1a1a1a] rounded-3xl shadow-lg p-6 sm:p-8 border border-gray-100 dark:border-gray-800 ${className}`}>
+    <div className={`bg-white dark:bg-[#1a1a1a] shadow-lg p-6 sm:p-8 border border-gray-100 dark:border-gray-800 ${className}`}>
       {children}
     </div>
   );
 
   const SkeletonLine = ({ className = '' }) => (
-    <div className={`bg-gray-200 dark:bg-[#2a2a2a] rounded-md animate-pulse ${className}`}></div>
+    <div className={`bg-gray-200 dark:bg-[#2a2a2a] animate-pulse ${className}`}></div>
   );
 
   return (
@@ -15,13 +15,13 @@ const MainSkeletonLoader = () => {
         {/* Header/Profile Skeleton */}
         <SkeletonCard className="mt-8 mb-6">
           <div className="flex flex-col sm:flex-row items-start gap-6">
-            <div className="flex-shrink-0 w-24 h-24 sm:w-36 sm:h-36 bg-gray-200 dark:bg-[#2a2a2a] rounded-2xl animate-pulse"></div>
+            <div className="flex-shrink-0 w-24 h-24 sm:w-36 sm:h-36 bg-gray-200 dark:bg-[#2a2a2a] animate-pulse"></div>
             <div className="flex-1 w-full space-y-4">
               <SkeletonLine className="h-8 w-3/5" />
               <SkeletonLine className="h-5 w-2/5" />
               <div className="flex flex-wrap gap-3 pt-2">
-                <SkeletonLine className="h-10 w-36 rounded-xl" />
-                <SkeletonLine className="h-10 w-32 rounded-xl" />
+                <SkeletonLine className="h-10 w-36 " />
+                <SkeletonLine className="h-10 w-32 " />
               </div>
             </div>
           </div>
@@ -30,7 +30,7 @@ const MainSkeletonLoader = () => {
         {/* Company Section Skeleton */}
         <SkeletonCard className="mb-6">
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
-            <div className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 bg-gray-200 dark:bg-[#2a2a2a] rounded-2xl animate-pulse"></div>
+            <div className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 bg-gray-200 dark:bg-[#2a2a2a] animate-pulse"></div>
             <div className="flex-1 w-full space-y-3">
               <SkeletonLine className="h-6 w-1/3" />
               <SkeletonLine className="h-4 w-full" />

@@ -6,7 +6,7 @@ export default function Preloader() {
           <img 
             src="/poypoyrelicon.svg" 
             alt="Loading Portfolio" 
-            className="w-24 h-24 rounded-xl shadow-lg dark:shadow-2xl dark:shadow-sky-500/20"
+            className="w-24 h-24 shadow-lg dark:shadow-2xl dark:shadow-sky-500/20"
           />
         </div>
         <div className="relative">

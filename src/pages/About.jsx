@@ -50,14 +50,14 @@ export default function About() {
         {/* Back Button */}
         <button
           onClick={() => navigate('/')}
-          className="mb-8 flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 rounded-xl hover:bg-gray-200 dark:hover:bg-[#2a2a2a] transition-all duration-300 hover:scale-105 text-gray-900 dark:text-white font-medium cursor-pointer"
+          className="mb-8 flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-[#2a2a2a] transition-all duration-300 hover:scale-105 text-gray-900 dark:text-white font-medium cursor-pointer"
         >
           <ChevronLeft size={18} />
           Back
         </button>
-        <div className="bg-white dark:bg-[#1a1a1a] rounded-3xl shadow-lg dark:shadow-2xl p-8 border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:shadow-xl dark:hover:shadow-2xl">
+        <div className="bg-white dark:bg-[#1a1a1a] shadow-lg dark:shadow-2xl p-8 border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:shadow-xl dark:hover:shadow-2xl">
           <div className="flex items-center gap-2 mb-6">
-            <div className="p-2 bg-gray-100 dark:bg-[#2a2a2a] rounded-lg">
+            <div className="p-2 bg-gray-100 dark:bg-[#2a2a2a] ">
               <User size={20} className="text-gray-700 dark:text-gray-300" />
             </div>
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white">About Me</h1>
@@ -76,7 +76,7 @@ export default function About() {
                 }`}
                 style={{ transitionDelay: `${idx * 100}ms` }}
               >
-                <div className="p-2 bg-sky-100 dark:bg-sky-900/30 rounded-lg flex items-center justify-center">
+                <div className="p-2 bg-sky-100 dark:bg-sky-900/30 flex items-center justify-center">
                   {fact.icon}
                 </div>
                 <div>

@@ -47,16 +47,16 @@ export default function TechStacks() {
         {/* Back Button */}
         <button
           onClick={() => navigate('/')}
-          className="mb-8 flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 rounded-xl hover:bg-gray-200 dark:hover:bg-[#2a2a2a] transition-all duration-300 hover:scale-105 text-gray-900 dark:text-white font-medium cursor-pointer"
+          className="mb-8 flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-[#2a2a2a] transition-all duration-300 hover:scale-105 text-gray-900 dark:text-white font-medium cursor-pointer"
         >
           <ChevronLeft size={18} />
           Back
         </button>
 
         {/* Tech Stack Card */}
-        <div className="bg-white dark:bg-[#1a1a1a] rounded-3xl shadow-lg dark:shadow-2xl p-8 border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:shadow-xl dark:hover:shadow-2xl">
+        <div className="bg-white dark:bg-[#1a1a1a] shadow-lg dark:shadow-2xl p-8 border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:shadow-xl dark:hover:shadow-2xl">
           <div className="flex items-center gap-2 mb-6">
-            <div className="p-2 bg-gray-100 dark:bg-[#2a2a2a] rounded-lg">
+            <div className="p-2 bg-gray-100 dark:bg-[#2a2a2a] ">
               <Code size={20} className="text-gray-700 dark:text-gray-300" />
             </div>
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Tech Stack Station</h1>
@@ -77,7 +77,7 @@ export default function TechStacks() {
                   {techs.map((tech, techIdx) => (
                     <span
                       key={techIdx}
-                      className="px-2.5 py-1.5 bg-gray-100 dark:bg-[#2a2a2a] text-gray-800 dark:text-gray-200 rounded-lg text-xs font-medium border border-gray-200 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-[#333] transition-all duration-300 hover:scale-105 hover:shadow-md"
+                      className="px-2.5 py-1.5 bg-gray-100 dark:bg-[#2a2a2a] text-gray-800 dark:text-gray-200 text-xs font-medium border border-gray-200 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-[#333] transition-all duration-300 hover:scale-105 hover:shadow-md"
                     >
                       {tech}
                     </span>

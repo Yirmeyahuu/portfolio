@@ -7,6 +7,7 @@ import Projects from './pages/Projects';
 import Certifications from './pages/Certifications';
 import Experience from './pages/Experience';
 import Workshop from './pages/Workshop';
+import Gallery from './pages/Gallery';
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react"
 
@@ -41,6 +42,7 @@ function App() {
           <Route path="/certifications" element={<Certifications />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/workshops" element={<Workshop />} />
+          <Route path="/gallery" element={<Gallery />} />
         </Routes>
         <Analytics />
         <SpeedInsights />

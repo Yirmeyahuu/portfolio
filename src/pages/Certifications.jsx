@@ -47,15 +47,15 @@ export default function Certifications() {
         {/* Back Button */}
         <button
           onClick={() => navigate('/')}
-          className="mb-8 flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 rounded-xl hover:bg-gray-200 dark:hover:bg-[#2a2a2a] transition-all duration-300 hover:scale-105 text-gray-900 dark:text-white font-medium cursor-pointer"
+          className="mb-8 flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-[#2a2a2a] transition-all duration-300 hover:scale-105 text-gray-900 dark:text-white font-medium cursor-pointer"
         >
           <ChevronLeft size={18} />
           Back
         </button>
         {/* Certifications Card */}
-        <div className="bg-white dark:bg-[#1a1a1a] rounded-3xl shadow-lg dark:shadow-2xl p-8 border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:shadow-xl dark:hover:shadow-2xl">
+        <div className="bg-white dark:bg-[#1a1a1a] shadow-lg dark:shadow-2xl p-8 border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:shadow-xl dark:hover:shadow-2xl">
           <div className="flex items-center gap-2 mb-6">
-            <div className="p-2 bg-gray-100 dark:bg-[#2a2a2a] rounded-lg">
+            <div className="p-2 bg-gray-100 dark:bg-[#2a2a2a] ">
               <Award size={20} className="text-gray-700 dark:text-gray-300" />
             </div>
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Certifications</h1>
@@ -64,7 +64,7 @@ export default function Certifications() {
             {certifications.map((cert, index) => (
               <div
                 key={index}
-                className={`p-4 bg-gray-50 dark:bg-[#2a2a2a] rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 transition-all duration-500 hover:scale-[1.02] hover:shadow-lg ${
+                className={`p-4 bg-gray-50 dark:bg-[#2a2a2a] border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 transition-all duration-500 hover:scale-[1.02] hover:shadow-lg ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
@@ -78,7 +78,7 @@ export default function Certifications() {
                     <p className="text-xs text-gray-600 dark:text-gray-400">
                       {cert.issuer}
                     </p>
-                    <span className="text-xs px-2 py-1 bg-gray-200 dark:bg-[#1a1a1a] text-gray-700 dark:text-gray-300 rounded mt-2 inline-block transition-all duration-300 hover:scale-105">
+                    <span className="text-xs px-2 py-1 bg-gray-200 dark:bg-[#1a1a1a] text-gray-700 dark:text-gray-300 mt-2 inline-block transition-all duration-300 hover:scale-105">
                       {cert.year}
                     </span>
                   </div>

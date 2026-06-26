@@ -59,15 +59,15 @@ export default function Experience() {
         {/* Back Button */}
         <button
           onClick={() => navigate('/')}
-          className="mb-8 flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 rounded-xl hover:bg-gray-200 dark:hover:bg-[#2a2a2a] transition-all duration-300 hover:scale-105 text-gray-900 dark:text-white font-medium cursor-pointer"
+          className="mb-8 flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-[#2a2a2a] transition-all duration-300 hover:scale-105 text-gray-900 dark:text-white font-medium cursor-pointer"
         >
           <ChevronLeft size={18} />
           Back
         </button>
         {/* Experience Card */}
-        <div className="bg-white dark:bg-[#1a1a1a] rounded-3xl shadow-lg dark:shadow-2xl p-8 border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:shadow-xl dark:hover:shadow-2xl">
+        <div className="bg-white dark:bg-[#1a1a1a] shadow-lg dark:shadow-2xl p-8 border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:shadow-xl dark:hover:shadow-2xl">
           <div className="flex items-center gap-2 mb-6">
-            <div className="p-2 bg-gray-100 dark:bg-[#2a2a2a] rounded-lg">
+            <div className="p-2 bg-gray-100 dark:bg-[#2a2a2a] ">
               <Briefcase size={20} className="text-gray-700 dark:text-gray-300" />
             </div>
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Experience</h1>
@@ -81,7 +81,7 @@ export default function Experience() {
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div className={`absolute left-[-9px] top-0 w-4 h-4 rounded-full border-2 transition-all duration-300 ${
+                <div className={`absolute left-[-9px] top-0 w-4 h-4 border-2 transition-all duration-300 ${
                   exp.current 
                     ? 'bg-blue-500 border-blue-500 animate-pulse' 
                     : 'bg-gray-300 dark:bg-gray-600 border-gray-300 dark:border-gray-600'
@@ -94,11 +94,11 @@ export default function Experience() {
                     {exp.company}
                   </p>
                   <div className="flex items-center gap-2">
-                    <span className="text-xs px-2 py-1 bg-gray-100 dark:bg-[#2a2a2a] text-gray-700 dark:text-gray-300 rounded transition-all duration-300 hover:scale-105">
+                    <span className="text-xs px-2 py-1 bg-gray-100 dark:bg-[#2a2a2a] text-gray-700 dark:text-gray-300 transition-all duration-300 hover:scale-105">
                       {exp.year}
                     </span>
                     {exp.current && (
-                      <span className="text-xs px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded font-medium transition-all duration-300 hover:scale-105 animate-pulse">
+                      <span className="text-xs px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-medium transition-all duration-300 hover:scale-105 animate-pulse">
                         Current
                       </span>
                     )}

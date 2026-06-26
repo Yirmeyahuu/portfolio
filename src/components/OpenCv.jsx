@@ -24,7 +24,7 @@ const OpenCv = ({ isOpen, onClose }) => {
 
   if (!isOpen) return null;
 
-  const cvPath = '/Resume.pdf'; 
+  const cvPath = '/Resume2.pdf'; 
 
   const handlePrint = () => {
     const iframe = document.getElementById('cv-iframe');
@@ -40,7 +40,7 @@ const OpenCv = ({ isOpen, onClose }) => {
       onClick={onClose}
     >
       <div
-        className="relative w-11/12 max-w-4xl h-5/6 bg-white dark:bg-[#1a1a1a] rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-gray-200 dark:border-gray-700"
+        className="relative w-11/12 max-w-4xl h-5/6 bg-white dark:bg-[#1a1a1a] shadow-2xl flex flex-col overflow-hidden border border-gray-200 dark:border-gray-700"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}
@@ -52,14 +52,14 @@ const OpenCv = ({ isOpen, onClose }) => {
             <a
               href={cvPath}
               download="Jeremiah-Pantaras-CV.pdf"
-              className="flex items-center gap-2 px-3 py-2 bg-gray-100 dark:bg-[#2a2a2a] border border-transparent rounded-lg hover:bg-gray-200 dark:hover:bg-[#333] transition-all duration-300 text-xs font-medium text-gray-900 dark:text-white"
+              className="flex items-center gap-2 px-3 py-2 bg-gray-100 dark:bg-[#2a2a2a] border border-transparent hover:bg-gray-200 dark:hover:bg-[#333] transition-all duration-300 text-xs font-medium text-gray-900 dark:text-white"
             >
               <Download size={16} />
               <span>Download</span>
             </a>
             <button
               onClick={onClose}
-              className="p-2 text-gray-500 hover:text-gray-900 dark:hover:text-white rounded-full hover:bg-gray-100 dark:hover:bg-[#2a2a2a] transition-colors cursor-pointer"
+              className="p-2 text-gray-500 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-[#2a2a2a] transition-colors cursor-pointer"
               aria-label="Close CV preview"
             >
               <X size={20} />
