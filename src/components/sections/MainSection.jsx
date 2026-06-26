@@ -274,17 +274,19 @@ const workshops = [
   
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-[#0a0a0a] transition-colors duration-300">
-      <div className={`max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 transition-all duration-700 ${
+      <div className={`w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 py-4 sm:py-6 transition-all duration-700 flex flex-col lg:flex-row gap-6 items-start ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}>
         
-        {/* Header/Profile Section */}
-        <div className={`relative bg-white dark:bg-[#1a1a1a] shadow-lg dark:shadow-2xl p-6 sm:p-8 mb-6 border border-gray-100 dark:border-gray-800 transition-all duration-500 hover:shadow-xl dark:hover:shadow-2xl mt-8 ${
+        {/* Left Column - Side Profile */}
+        <div className="w-full lg:w-[320px] xl:w-[360px] flex-shrink-0 lg:sticky lg:top-6 lg:self-start z-20">
+          {/* Header/Profile Section */}
+        <div className={`relative bg-white dark:bg-[#1a1a1a] shadow-lg dark:shadow-2xl p-6 sm:p-8 border border-gray-100 dark:border-gray-800 transition-all duration-500 hover:shadow-xl dark:hover:shadow-2xl mt-2 lg:mt-0 ${
           isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
         }`}
         style={{ transitionDelay: '100ms' }}>
           {/* Theme Toggle Button - Top Right Corner */}
-          <div className="absolute top-6 right-6 z-10">
+          <div className="w-full flex justify-end mb-6 z-10">
             <button
               onClick={toggleTheme}
               className="p-2 bg-gray-200 dark:bg-gray-700 shadow-lg dark:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer w-16 h-8 flex items-center relative"
@@ -305,10 +307,10 @@ const workshops = [
               </div>
             </button>
           </div>
-          <div className="flex flex-col sm:flex-row items-start gap-6">
+          <div className="flex flex-col sm:flex-row lg:flex-col items-center sm:items-start lg:items-center gap-6 text-center sm:text-left lg:text-center">
             {/* Avatar */}
             <div className="flex-shrink-0">
-              <div className="w-24 h-24 sm:w-36 sm:h-36 overflow-hidden border-2 border-gray-200 dark:border-gray-700 shadow-xl transition-all duration-300">
+              <div className="w-48 h-48 sm:w-48 sm:h-48 lg:w-56 lg:h-56 mx-auto overflow-hidden border-2 border-gray-200 dark:border-gray-700 shadow-xl transition-all duration-300">
                 <img
                   src={darkMode ? '/profile/darkMode.webp' : '/profile/lightMode.webp'}
                   alt={profile.name}
@@ -319,18 +321,18 @@ const workshops = [
 
             {/* Info */}
             <div className="flex-1 w-full">
-              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
-                <div>
-                  <h1 className="text-2xl sm:text-lg lg:text-2xl font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2 cursor-default">
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between lg:flex-col lg:items-center gap-4 mb-4">
+                <div className="w-full flex flex-col items-center sm:items-start lg:items-center">
+                  <h1 className="text-2xl sm:text-lg lg:text-2xl font-bold text-gray-900 dark:text-white mb-2 flex items-center justify-center sm:justify-start lg:justify-center gap-2 cursor-default">
                     {profile.name}
                     <span className="inline-flex items-center justify-center relative w-7 h-7">
                       <svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 flex-shrink-0" aria-label="Verified user"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="#1d9bf0"></path>
                       </svg>
                     </span>
                   </h1>
-                  <div className="flex items-center gap-2 text-xs md:text-xs lg:text-xs text-gray-600 dark:text-gray-300 mb-3 cursor-default">
-                    <MapPin size={16} />
-                    <span className="text-sm">{profile.location}</span>
+                  <div className="flex items-center justify-center sm:justify-start lg:justify-center gap-1.5 text-gray-600 dark:text-gray-300 mb-3 cursor-default whitespace-nowrap">
+                    <MapPin size={14} className="flex-shrink-0" />
+                    <span className="text-[11px] sm:text-xs truncate">{profile.location}</span>
                   </div>
                   <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 cursor-default">
                     {profile.title}
@@ -339,40 +341,41 @@ const workshops = [
               </div>
 
               {/* Action Buttons */}
-              <div className="flex flex-wrap gap-3">
-                <button 
-                  ref={cvButtonRef}
-                  onClick={() => setIsCvModalOpen(true)}
-                  className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-[#2a2a2a] border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-[#333] transition-all duration-300 hover:scale-105 text-xs md:text-xs lg:text-xs text-gray-900 dark:text-white cursor-pointer"
-                >
-                  <Briefcase size={18} />
-                  <span>View <span className="italic">Curriculum Vitae</span></span>
-                  <ChevronRight size={16} />
-                </button>
-                <button 
-                  onClick={() => window.location.href = 'mailto:jeremiahpantaras@gmail.com'}
-                  className="flex items-center gap-2 px-2.5 py-1 bg-white dark:bg-[#2a2a2a] border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-[#333] transition-all duration-300 hover:scale-105 text-xs md:text-xs lg:text-xs text-gray-900 dark:text-white cursor-pointer"
-                >
-                  <Mail size={18} />
-                  <span>Send Email</span>
-                </button>
+              <div className="flex flex-col gap-2 w-full max-w-[280px] mx-auto">
+                <div className="flex flex-row justify-center gap-2 w-full">
+                  <button 
+                    ref={cvButtonRef}
+                    onClick={() => setIsCvModalOpen(true)}
+                    className="flex-1 flex items-center justify-center gap-1.5 px-2 py-2 bg-white dark:bg-[#2a2a2a] border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-[#333] transition-all duration-300 hover:scale-105 text-[11px] sm:text-xs text-gray-900 dark:text-white cursor-pointer"
+                  >
+                    <Briefcase size={14} className="flex-shrink-0" />
+                    <span className="whitespace-nowrap">View <span className="italic">CV</span></span>
+                  </button>
+                  <button 
+                    onClick={() => window.location.href = 'mailto:jeremiahpantaras@gmail.com'}
+                    className="flex-1 flex items-center justify-center gap-1.5 px-2 py-2 bg-white dark:bg-[#2a2a2a] border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-[#333] transition-all duration-300 hover:scale-105 text-[11px] sm:text-xs text-gray-900 dark:text-white cursor-pointer"
+                  >
+                    <Mail size={14} className="flex-shrink-0" />
+                    <span className="whitespace-nowrap">Email</span>
+                  </button>
+                </div>
                 
                 {/* Achievement Badge */}
                 <a 
                   href="https://portal.connectingasia.org/conference/schedule/aic?_gl=1*tctq5t*_gcl_au*MTY4NTUzNzc5NS4xNzYzNTU4NTg4*_ga*MTE0Mjk2NzQ4My4xNzYzNTU4NTg4*_ga_VGQ86S5R1H*czE3NjUyODYwNjkkbzMkZzAkdDE3NjUyODYwNjkkajYwJGwwJGgw&_ga=2.32719870.1781276684.1765286072-1142967483.1763558588"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer w-full sm:w-auto"
+                  className="flex items-center justify-center gap-1.5 px-2 py-1.5 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer w-full text-center"
                 >
-                  <Medal size={16} className="flex-shrink-0" />
-                  <span className="text-xs font-semibold sm:whitespace-nowrap">
+                  <Medal size={14} className="flex-shrink-0" />
+                  <span className="text-[10px] leading-tight font-semibold">
                     Presented in the 11th Asia International Conference 2025
                   </span>
                 </a>
               </div>
 
               {/* Social Links */}
-              <div className="flex gap-3 mt-4">
+              <div className="flex justify-center sm:justify-start lg:justify-center gap-3 mt-4">
                 {socials.map((social, index) => {
                   const Icon = social.icon
                   return (
@@ -392,6 +395,11 @@ const workshops = [
             </div>
           </div>
         </div>
+        </div>
+        {/* End of Left Column */}
+
+        {/* Right Column - Main Content */}
+        <div className="flex-1 w-full flex flex-col min-w-0">
 
         {/* Company Section */}
         <div className={`bg-white dark:bg-[#1a1a1a] shadow-lg dark:shadow-2xl p-6 sm:p-8 mb-6 border border-gray-100 dark:border-gray-800 transition-all duration-500 hover:shadow-xl dark:hover:shadow-2xl ${
@@ -853,6 +861,9 @@ const workshops = [
             </div>
           </div>
         </footer>
+        
+        </div>
+        {/* End of Right Column */}
       </div>
 
       {/* Floating Chat Button & Chat Window */}
