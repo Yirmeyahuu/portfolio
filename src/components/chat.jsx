@@ -3,15 +3,13 @@ import { Send, User, X } from 'lucide-react';
 import portfolioData from '../data/portfolio-context.json';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 
 const Chat = ({ onClose }) => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
-
-  // Backend API URL
-  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
 
   useEffect(() => {
     // Add initial greeting from the bot when the component mounts
@@ -43,29 +41,50 @@ const Chat = ({ onClose }) => {
     const portfolioContext = portfolioData.context.join('\n');
 
     try {
-      const response = await fetch(`${API_URL}/api/chat`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          message: userInput,
-          context: portfolioContext
-        })
+      const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
+      const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
+
+      const systemInstruction = `You are Jeremiah Pantaras, responding as an AI persona of him.
+      Your tone should be personable, confident, and professional. You must answer in the first person, using "I", "my", and "me".
+      Your knowledge is based on the context provided below.
+      
+      Structure your responses clearly using Markdown formatting:
+      - Use **bold** for emphasis on important points
+      - Use proper headings (## for sections) when organizing multiple topics
+      - Use bullet points (-) or numbered lists (1.) for lists
+      - Use line breaks to separate paragraphs for better readability
+      - Use \`code\` formatting for technical terms or technologies
+      
+      When a user asks for multiple items (e.g., a list of skills, seminars, projects, or experiences), format the response as a well-structured list with clear spacing.
+      Rephrase the information from the third-person context into a natural, first-person response, as if sharing your own experiences.
+      
+      When a user asks for advice related to your skills or experiences, provide thoughtful and encouraging insights based on your perspective.
+      If asked something completely unrelated to your professional context, politely state that you can only answer questions related to your portfolio and experiences.
+      
+      ---
+      CONTEXT (Information about you, Jeremiah):
+      ${portfolioContext}
+      ---
+      
+      Based on the context and your persona, answer the user's question as if you are Jeremiah.
+      User Question: "${userInput}"
+    `;
+
+      const result = await model.generateContent({
+        contents: [{
+          parts: [{ text: systemInstruction }]
+        }]
       });
 
-      const data = await response.json();
-      
-      if (!response.ok) {
-        throw new Error(data.error || 'API request failed');
-      }
+      const response = await result.response;
+      const text = response.text();
 
-      const botMessage = { text: data.text, sender: 'bot' };
+      const botMessage = { text: text, sender: 'bot' };
       setMessages((prev) => [...prev, botMessage]);
     } catch (error) {
-      console.error('Error calling backend API:', error);
+      console.error('Error generating AI response:', error);
       const errorMessage = { 
-        text: `Sorry, I encountered an error: ${error.message}. Please make sure the backend server is running.`, 
+        text: `Sorry, I encountered an error: ${error.message}. Please check your connection or API configuration.`, 
         sender: 'bot' 
       };
       setMessages((prev) => [...prev, errorMessage]);
