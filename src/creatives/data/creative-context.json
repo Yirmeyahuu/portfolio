@@ -1,0 +1,47 @@
+{
+  "portfolio": {
+    "title": "Jeremiah Pantaras - Creative Portfolio",
+    "description": "I build systems through code and tell stories through visuals.",
+    "disciplines": [
+      {
+        "id": "photography",
+        "title": "Photography",
+        "description": "Capturing moments and telling stories through the lens. Focusing on portraits, landscapes, and event photography.",
+        "icon": "Camera"
+      },
+      {
+        "id": "videography",
+        "title": "Videography",
+        "description": "Crafting visual narratives with motion. Creating compelling visual content for diverse projects.",
+        "icon": "Video"
+      },
+      {
+        "id": "photo-editing",
+        "title": "Photo Editing",
+        "description": "Enhancing images with an eye for color, composition, and detail using industry-standard tools.",
+        "icon": "Image"
+      },
+      {
+        "id": "video-editing",
+        "title": "Video Editing",
+        "description": "Assembling raw footage into cinematic sequences that convey emotion and narrative flow.",
+        "icon": "Film"
+      },
+      {
+        "id": "filmmaking",
+        "title": "Filmmaking",
+        "description": "Directing and producing short films, blending technical skill with creative storytelling.",
+        "icon": "Clapperboard"
+      },
+      {
+        "id": "graphic-design",
+        "title": "Graphic Design",
+        "description": "Designing visually striking digital assets, branding materials, and marketing collateral.",
+        "icon": "PenTool"
+      }
+    ],
+    "galleries": [],
+    "filmProjects": [],
+    "clientWork": []
+  }
+}

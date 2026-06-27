@@ -1,5 +1,6 @@
 import { X, Download } from 'lucide-react';
 import { useEffect } from 'react';
+import { createPortal } from 'react-dom';
 
 export default function ImageModal({ image, title, isOpen, onClose }) {
   useEffect(() => {
@@ -43,39 +44,41 @@ export default function ImageModal({ image, title, isOpen, onClose }) {
     }
   };
 
-  return (
+  const modalContent = (
     <div 
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm"
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8 bg-black/90 backdrop-blur-md"
       onClick={onClose}
     >
+      {/* Fixed Close Button for consistent positioning across all devices */}
+      <button 
+        onClick={onClose}
+        className="fixed top-4 right-4 sm:top-6 sm:right-6 z-[110] p-2 bg-black/40 rounded-full text-white/70 hover:text-white hover:bg-black/80 transition-all cursor-pointer border border-white/10"
+        aria-label="Close modal"
+      >
+        <X size={28} />
+      </button>
+
       <div 
-        className="relative max-w-5xl w-full max-h-[95vh] flex flex-col items-center justify-center"
+        className="relative w-full max-w-6xl h-full flex flex-col items-center justify-center gap-6"
         onClick={e => e.stopPropagation()}
       >
-        <button 
-          onClick={onClose}
-          className="absolute top-0 right-0 -mt-12 md:-mr-12 md:mt-0 p-2 text-white/70 hover:text-white transition-colors cursor-pointer"
-          aria-label="Close modal"
-        >
-          <X size={32} />
-        </button>
-        
-        <div className="w-full flex justify-center items-center overflow-hidden">
-          <img 
-            src={image} 
-            alt={title} 
-            className="max-w-full max-h-[80vh] object-contain shadow-2xl"
-          />
-        </div>
+        <img 
+          src={image} 
+          alt={title} 
+          className="max-w-full max-h-[75vh] md:max-h-[85vh] object-contain shadow-2xl drop-shadow-2xl"
+        />
         
         <button
           onClick={handleDownload}
-          className="mt-6 flex items-center gap-2 px-6 py-2.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all duration-300 shadow-lg cursor-pointer"
+          className="flex items-center gap-2 px-6 py-2.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all duration-300 shadow-lg cursor-pointer rounded-full backdrop-blur-sm"
         >
           <Download size={18} />
-          <span className="font-medium">Download Photo</span>
+          <span className="font-medium text-sm">Download Photo</span>
         </button>
       </div>
     </div>
   );
+
+  // Render the modal directly into document.body to escape GSAP wrapper transforms and filters
+  return createPortal(modalContent, document.body);
 }

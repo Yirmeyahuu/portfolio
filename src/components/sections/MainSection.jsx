@@ -19,13 +19,15 @@ import {
   MessageSquare,
   Medal,
   ChevronUp,
-  Image as ImageIcon
+  Image as ImageIcon,
+  Camera
 } from 'lucide-react';
 import MainSkeletonLoader from '../MainSkeletonLoader';
 import Preloader from '../Preloader';
 import Chat from '../chat';
 import OpenCv from '../OpenCv';
 import ImageModal from '../ImageModal';
+import { Link } from 'react-router-dom';
 
 export default function MainSection() {
   const [darkMode, setDarkMode] = useState(true)
@@ -391,6 +393,17 @@ const workshops = [
                     </a>
                   )
                 })}
+              </div>
+
+              {/* Creative Side CTA */}
+              <div className="mt-6 w-full flex justify-center sm:justify-start lg:justify-center">
+                <Link
+                  to="/creative"
+                  className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-gray-900 to-gray-800 dark:from-gray-100 dark:to-white text-white dark:text-gray-900 font-bold uppercase tracking-widest text-xs hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer"
+                >
+                  <Camera size={16} className="flex-shrink-0" />
+                  View my Creative Side
+                </Link>
               </div>
             </div>
           </div>
