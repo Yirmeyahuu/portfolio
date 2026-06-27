@@ -48,13 +48,21 @@ export default function CreativeHero() {
             A space where imagination meets visual storytelling. I specialize in crafting meaningful experiences through photography, cinematic films, visual design, and creative editing—capturing authentic moments and transforming ideas into compelling pieces of art. Every frame, composition, and detail is intentionally created to evoke emotion, tell stories, and bring visions to life in ways that are both memorable and impactful.
           </p>
 
-          <div className="mt-12 flex gap-4">
+          <div className="mt-12 flex flex-wrap gap-4">
             <button 
               onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })}
               className="px-8 py-4 bg-white text-black font-bold uppercase tracking-wider text-sm hover:bg-gray-200 transition-colors cursor-pointer"
             >
               Explore Work
             </button>
+            <a 
+              href="/creative-assets/creative-resume/creative-resume.pdf" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 bg-transparent border border-gray-700 text-white font-bold uppercase tracking-wider text-sm hover:bg-white hover:text-black transition-colors"
+            >
+              Creative Resume
+            </a>
             <a href="/" className="px-8 py-4 bg-transparent border border-gray-700 text-white font-bold uppercase tracking-wider text-sm hover:bg-gray-800 transition-colors flex items-center gap-2">
               Back to Developer
             </a>
